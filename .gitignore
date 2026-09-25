@@ -6,3 +6,6 @@ dist/
 *.log
 .vscode/
 .idea/
+
+# Salida del build de Vercel
+public/
