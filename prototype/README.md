@@ -18,6 +18,12 @@ Objetivo: un prototipo navegable del journey del propietario que sirva para la d
 - Sin backend, sin base de datos, sin APIs. Si algo necesita persistir, `localStorage` o un archivo JSON.
 - Pantallas mobile-first: el propietario limeño usa el celular.
 
+## Design system
+
+`design-system/` tiene tokens (`tokens.json`), fundamentos de contenido y visuales (`README.md`) y 10 componentes con su `README.md` y un `preview.html` estático. Sale de medir el portal Zona Hipotecaria de Interbank el 25 sept 2026; cada token indica si es Medido, Estimado, Ajustado o Propuesto. Es referencia, no código importable: no hay librería ni build.
+
+Pendientes que el propio sistema declara: precio del seguro (decisión 010, `SolutionOption` no muestra monto), cortes de las bandas de score (0-39, 40-69, 70-100 provisionales), texto legal de consentimiento, licencia de Geometria y logotipo.
+
 ## Fuera del prototipo
 
 Integración bancaria real, emisión real de pólizas, marketplace propio, Renta Adelantada funcional, Housing Graph.
@@ -36,5 +42,6 @@ prototype/
   README.md
   src/
   data/        JSON ficticio: inmuebles, postulantes, scores
+  design-system/  tokens, fundamentos y componentes de referencia
   docs/        capturas y guion de la demo
 ```
