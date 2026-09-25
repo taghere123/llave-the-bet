@@ -1,24 +1,21 @@
 # 010. Precio del seguro: monto fijo vs. % de la renta
 
-**Estado:** ABIERTA. Responsable: William Salinas con Interseguro (suscripción y actuarial). Bloquea: narrativa de cómo funciona y cuánto cuesta, y toda proyección de ingresos.
+**Estado:** CERRADA el 25 sept 2026. Responsable: equipo. Pendiente con Interseguro (suscripción y actuarial): tarificar y validar el porcentaje.
 
 ## Contexto
-Dos versiones conviven en los documentos del equipo.
+Dos versiones convivían en los documentos del equipo.
 
 | | A. Monto fijo con ahorro | B. Porcentaje de la renta |
 | --- | --- | --- |
 | Prima | S/15-100 al mes según tipo de propiedad | 2-5% de la renta |
 | Paga | Inquilino | Inquilino |
 | Ahorro devuelto | Sí: la mitad al llegar a S/2,000, S/4,000 y S/10,000 acumulados | No |
-| Dónde aparece | Sesión de Working Backwards, propuesta del equipo | Big Idea oficial y texto de la herramienta de Amazon |
-
-## Preguntas a resolver
-- ¿Un monto fijo se puede tarifar de forma sostenible? Una renta de S/800 y una de S/4,000 tienen exposición muy distinta bajo la misma prima.
-- ¿La devolución de ahorro sobrevive a la tarificación? Devolver el 50% de la prima acumulada reduce el margen del seguro y necesita validación actuarial.
-- ¿Cuál cabe mejor en el MVP de 90 días?
-
-## Riesgo
-Un jurado que haya visto ambos documentos nota la inconsistencia.
+| Dónde aparecía | Sesión de Working Backwards, propuesta del equipo | Big Idea oficial y texto de la herramienta de Amazon |
 
 ## Decisión
-Pendiente. Al cerrarla, actualizar `context/01-propuesta-big-idea.md`, `context/02-handoff.md`, el deck y el infográfico.
+Modelo B. La prima es del 2 al 5% de la renta, como precio de un seguro de hogar que paga el inquilino y protege al propietario de daños al inmueble (003). El modelo A queda descartado, incluida la devolución de ahorro.
+
+## Consecuencias
+- El rango 2-5% es una cifra del equipo, sin sustento actuarial. Interseguro debe confirmar que es sostenible para un seguro de hogar.
+- El prototipo escalona el porcentaje por banda de score (alto 2%, medio 3.5%, bajo 5%). Ese escalonamiento es un supuesto, no parte de la decisión.
+- Actualizar el deck y el infográfico, que están fuera del repo. `context/01` y `context/02` ya quedaron alineados.

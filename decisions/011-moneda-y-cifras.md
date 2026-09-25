@@ -13,4 +13,4 @@
 3. Actualizar deck, Big Idea e infográfico.
 
 ## Nota
-No añadir cifras de Cobro Garantizado o Renta Adelantada sin sustento actuarial.
+No añadir cifras de ingresos de Cobro Garantizado o Renta Adelantada sin sustento actuarial. Los precios (012 y 016) son cifras del equipo, no proyecciones de ingresos.

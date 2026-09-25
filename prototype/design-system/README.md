@@ -1,6 +1,6 @@
 # LLAVE
 
-Hogares que abren oportunidades. Sistema de diseño base para el MVP de LLAVE (The Bet, equipo 22): el propietario publica su inmueble, recibe postulantes, solicita el RentScore, ve el score y elige una solución financiera.
+Hogares que abren oportunidades. Sistema de diseño base para el MVP de LLAVE (The Bet, equipo 22): el propietario publica su inmueble, recibe postulantes, ve el RentScore, y elige una solución financiera.
 
 ## De dónde sale
 
@@ -11,7 +11,7 @@ Se midió en vivo el portal Zona Hipotecaria de Interbank (micasapropia.interban
 Español de Perú, tuteo, frases cortas y verbos de acción. El portal habla con calidez y sin jerga: "Conócelo", "Déjanos tus datos", "Premiamos tu esfuerzo ahorrador", "Paga tu departamento hasta en 30 años". LLAVE conserva ese tono y suma claridad sobre el dinero y los datos.
 
 - Titulares cortos y en oración: "Encuentra tu inmueble ideal", no "ENCUENTRA TU INMUEBLE IDEAL".
-- Botones con verbo: "Solicitar RentScore", "Publicar inmueble", "Autorizar y continuar".
+- Botones con verbo: "Ver RentScore", "Publicar inmueble", "Autorizar y continuar".
 - Montos siempre en soles: `S/2,400` (sin espacio tras S/, coma de miles). Nunca dólares en pantalla.
 - Mayúsculas solo en etiquetas cortas (`label-caps`): ESTADO, FINANCIADO POR, RENTA MENSUAL.
 - Lo que no está definido se dice: "referencial", "por definir". No se inventan cifras ni tasas.
@@ -53,8 +53,8 @@ El tema oscuro no existe en el portal: es una propuesta para uso en pantallas de
 | --- | --- |
 | Propietario publica inmueble | NavHeader, Button, PropertyCard |
 | Recibe postulante | PropertyCard, StatusBadge |
-| Postulante autoriza sus datos | ConsentBlock, Button |
-| Solicita y visualiza el score | RentScoreCard, StatusBadge |
+| Postulante autoriza al postular que se vea su score | ConsentBlock, Button |
+| Visualiza el score | RentScoreCard, StatusBadge |
 | Explora solución financiera o deja interés | SolutionOption, CtaBanner, Button |
 
 ## Pendiente de definir

@@ -2,7 +2,7 @@
 
 Iniciativa del Equipo 22 para The Bet (Interbank, IFS, Interseguro, con Amazon/AWS).
 
-RentScore evalúa al inquilino con datos bancarios reales. Un seguro de impago pagado por el inquilino reemplaza el depósito. Opcionalmente, Interbank garantiza o adelanta la renta al propietario.
+RentScore evalúa al inquilino con datos bancarios reales. Un seguro de hogar pagado por el inquilino protege el inmueble de daños. Opcionalmente, Interbank garantiza la renta (cubre el impago) o la adelanta al propietario.
 
 **Repo privado. No subir datos reales de clientes, credenciales ni documentos internos confidenciales. Todo dato en `/prototype` es inventado.**
 
@@ -26,7 +26,7 @@ Hay propuesta, pero no hay producto. Sin código, sin prototipo, sin validación
 
 1. Este README.
 2. `context/02-handoff.md`.
-3. `decisions/` completo, empezando por las abiertas (010, 011, 012).
+3. `decisions/` completo, empezando por las abiertas (011, 013, 014).
 4. `context/01-propuesta-big-idea.md`.
 5. `context/04-programa-y-calendario.md`.
 

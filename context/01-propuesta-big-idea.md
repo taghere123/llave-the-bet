@@ -2,11 +2,11 @@
 
 Fuente: `originals/LLAVE_BigIdea_RentaGarantizada.docx` (Taller 2, 14 sept 2026). Este archivo es la versión en markdown para trabajo en equipo.
 
-> Aviso: el precio del seguro aquí aparece como 2-5% de la renta. Otra versión del equipo usa monto fijo (S/15-100 al mes). Ver `decisions/010-precio-seguro.md`. No citar ninguna de las dos como definitiva hasta cerrar esa decisión.
+> Actualizado el 25 sept 2026 con correcciones del equipo. El docx original no se modificó y en esos puntos ya no coincide. Cambios: (1) el seguro es de hogar y protege de daños; no reemplaza el depósito ni cubre impago (`decisions/003`); (2) prima de 2-5% de la renta (`decisions/010`); (3) Cobro Garantizado cubre el impago, con comisión de 3% (score alto) o 5% (medio) y solo para score medio o alto (`decisions/012`); (4) el inquilino autoriza al postular (`decisions/015`); (5) Renta Adelantada entra al MVP, solo contratos de 1 año, con comisión de 15% (alto) o 25% (medio), y los niveles 2 y 3 son un préstamo de consumo a tasa cero, no factoring (`decisions/016`).
 
 ## Descripción corta
 
-Plataforma que evalúa al inquilino con datos bancarios reales y lo vincula a un seguro de impago mensual que reemplaza el depósito tradicional. Además, el propietario puede elegir que Interbank le pague la renta cada mes de forma garantizada, o incluso se la adelante por trimestre, semestre, año o el contrato completo.
+Plataforma que evalúa al inquilino con datos bancarios reales y lo vincula a un seguro de hogar mensual que protege el inmueble de daños. Además, el propietario puede elegir que Interbank le pague la renta cada mes de forma garantizada (Interbank asume el impago), o incluso le adelante la renta de un contrato de un año.
 
 ## Por qué es Box 3 (Crear el Futuro)
 
@@ -14,15 +14,15 @@ RentScore Seguro solo es un seguro con mejor tarificación. Lo que lo vuelve Box
 
 ## Problema y ajuste solución-problema
 
-El propietario limeño decide por intuición y con papeles falseables, sin protección real ante impagos que tardan más de un año en resolverse legalmente. RentScore Seguro integra evaluación objetiva y cobertura de impago pagada por el inquilino. Con la capa de Renta Garantizada, el pago ya no depende de que un inquilino específico transfiera a tiempo, sino de un compromiso directo de Interbank.
+El propietario limeño decide por intuición y con papeles falseables, sin protección real ante impagos que tardan más de un año en resolverse legalmente. RentScore Seguro integra evaluación objetiva y un seguro de hogar contra daños, pagado por el inquilino. Con la capa de Cobro Garantizado, el pago ya no depende de que un inquilino específico transfiera a tiempo, sino de un compromiso directo de Interbank.
 
 ## Cómo funciona
 
 1. El propietario publica su inmueble o ingresa datos básicos.
-2. El candidato autoriza la consulta de sus datos bancarios y financieros vía Interbank.
+2. Para postular, el candidato autoriza que el propietario vea su RentScore, calculado con sus datos bancarios y financieros vía Interbank.
 3. En 48 horas RentScore entrega un reporte: score de solvencia (0-100), cuota segura recomendada y comparativa con el mercado.
-4. Si el propietario acepta, Interseguro emite una póliza de alquiler con prima mensual pagada por el inquilino. Cubre impago hasta 6 meses de renta, daños y responsabilidad civil, y reemplaza el depósito de dos meses.
-5. El propietario elige cómo cobrar: estándar, Cobro Garantizado o Renta Adelantada.
+4. Si el propietario acepta, Interseguro emite un seguro de hogar con prima mensual pagada por el inquilino. Cubre daños al inmueble y responsabilidad civil. No reemplaza el depósito ni cubre impago.
+5. El propietario elige cómo cobrar: estándar, Cobro Garantizado o Renta Adelantada. Las dos últimas, solo si el inquilino tiene score medio o alto.
 6. El inquilino mejora su score con cada pago puntual y construye historial para un futuro crédito hipotecario con Interbank.
 
 ## Arquitectura de 4 niveles
@@ -30,9 +30,9 @@ El propietario limeño decide por intuición y con papeles falseables, sin prote
 | Nivel | Qué recibe el propietario | Qué asume Interbank | Comisión (referencial) |
 | --- | --- | --- | --- |
 | 0. RentScore | Evaluación objetiva del candidato antes de firmar | Ninguno, es el punto de entrada | Gratuito |
-| 1. RentScore Seguro | Cobertura de impago (hasta 6 meses), daños y responsabilidad civil. Siniestro pagado en 15 días hábiles | Riesgo transferido a Interseguro vía póliza | Prima pagada por el inquilino (ver decisión 010) |
-| 2. Cobro Garantizado | Renta depositada cada mes en fecha fija, haya pagado o no el inquilino | Gestión de cobro directo; riesgo de timing y morosidad de corto plazo | Adicional sobre la prima base, a validar con Riesgos |
-| 3. Renta Adelantada | Un desembolso único por trimestre, semestre, año o contrato completo | Factoriza el flujo futuro; asume riesgo y costo de capital | Creciente según plazo |
+| 1. RentScore Seguro | Seguro de hogar: cobertura de daños al inmueble y responsabilidad civil. No cubre impago. Siniestro pagado en 15 días hábiles | Riesgo transferido a Interseguro vía póliza | Prima pagada por el inquilino: 2-5% de la renta (decisión 010) |
+| 2. Cobro Garantizado | Renta depositada cada mes en fecha fija, haya pagado o no el inquilino. Solo inquilinos con score medio o alto | Impago de todos los inquilinos del programa, más riesgo de timing. Préstamo de consumo a tasa cero | Comisión mensual sobre la renta pagada por el propietario: 3% con score alto, 5% con medio (decisión 012; sin sustento actuarial) |
+| 3. Renta Adelantada | Un desembolso único con la renta de un contrato de 1 año. Solo inquilinos con score medio o alto | Préstamo de consumo a tasa cero: asume impago y costo de capital | Comisión sobre la renta del año: 15% con score alto, 25% con medio (decisión 016; sin sustento actuarial) |
 
 ## Impacto en el negocio (todo proyectado, nada observado)
 
@@ -46,7 +46,6 @@ El propietario limeño decide por intuición y con papeles falseables, sin prote
 
 ## Impacto social
 
-- Acceso a vivienda sin depósito de 2 meses.
 - Formalización del mercado de alquiler.
 - Score transparente frente a sesgos del propietario.
 - Historial digital reutilizable para otros productos financieros.
@@ -67,9 +66,9 @@ No se encontró un jugador equivalente en Perú ni en Latinoamérica. Esa búsqu
 ## Riesgos y regulación (niveles 2 y 3)
 
 - Capital y provisiones (SBS): un adelanto de renta podría tratarse como operación crediticia, con provisiones y capital regulatorio.
-- Estructura como cesión de cobro y no préstamo: es el camino que usa Wectory en Reino Unido. No hay garantía de que la SBS lo trate igual. Hay que consultarlo con Legal.
+- Estructura: el equipo descartó la cesión de cobro (el camino de Wectory en Reino Unido) y definió los niveles 2 y 3 como préstamo de consumo a tasa cero, con la comisión como interés implícito (decisión 016). Legal debe revisar transparencia (TCEA) y topes de tasa: la TEA implícita calculada es 36-44% con score alto y 74-95% con medio.
 - Concentración: adelantar contratos completos concentra exposición en inquilinos sin historial de mora maduro.
-- Secuencia recomendada: validar nivel 1 en el piloto de 90 días, activar nivel 2 cuando el score tenga historial suficiente para descartar selección adversa, e introducir nivel 3 solo después de que Riesgos y Legal definan pricing y estructura legal. El nivel 3 es la evolución a 2-3 años, no parte del MVP.
+- Secuencia: la recomendación original era activar el nivel 2 cuando el score tuviera historial suficiente para descartar selección adversa. El equipo decidió probarlo en el piloto de 90 días, solo con score medio o alto (decisión 012). El nivel 3 también entra al piloto, solo con contratos de 1 año (decisión 016).
 
 ## Ventaja competitiva
 

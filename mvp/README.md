@@ -4,24 +4,25 @@ Esto es una especificación, no código. Se completa durante y después del tall
 
 ## Hipótesis central
 
-El propietario paga por la garantía de cobro (RentScore + Seguro) más de lo que paga hoy por publicar su inmueble.
+El propietario paga por la garantía de cobro (RentScore + Cobro Garantizado o Renta Adelantada) más de lo que paga hoy por publicar su inmueble. El seguro lo paga el inquilino y no cubre impago; lo que paga el propietario es la comisión de Cobro Garantizado o de Renta Adelantada.
 
 ## Hipótesis secundarias (no validadas)
 
-- El inquilino acepta pagar una prima mensual en vez de un depósito.
-- El inquilino autoriza el acceso a sus datos bancarios.
-- Un subconjunto de propietarios adopta Cobro Garantizado pagando comisión real (ver decisión 012).
-- El seguro se puede tarificar de forma sostenible con el score (ver decisión 010).
+- El inquilino acepta pagar una prima mensual (2-5% de la renta) por el seguro de hogar, además del depósito.
+- El inquilino autoriza al postular que el propietario vea su RentScore (decisión 015).
+- Un subconjunto de propietarios adopta Cobro Garantizado pagando comisión real: 3% de la renta con score alto, 5% con medio (decisión 012).
+- Un subconjunto de propietarios adopta Renta Adelantada de un año: 15% con score alto, 25% con medio (decisión 016).
+- El seguro se puede tarificar de forma sostenible con el score (decisión 010, falta Interseguro).
 
 ## Qué entra y qué no
 
 | Entra | No entra |
 | --- | --- |
 | Nivel 0 RentScore (scorecard de reglas) | Marketplace propio |
-| Nivel 1 RentScore Seguro | Renta Adelantada (nivel 3) |
+| Nivel 1 RentScore Seguro | Contratos de más de 1 año en Renta Adelantada |
 | Cuenta Arrendador existente, con etiqueta | Housing Graph |
 | Integración liviana con un portal existente | Modelo de ML |
-| Nivel 2 según decisión 012 | Expansión fuera de Lima |
+| Niveles 2 y 3, solo score medio o alto, como préstamo de consumo a tasa cero (012 y 016) | Expansión fuera de Lima |
 
 ## Por completar
 

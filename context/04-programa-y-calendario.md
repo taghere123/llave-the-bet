@@ -28,7 +28,7 @@ Metodología en 5 pasos: definir el problema, traducir a requerimientos, constru
 
 Entregable esperado: prototipo navegable o funcional del journey priorizado, pantallas clave del MVP, user journey del propietario, backlog corto y demo lista.
 
-Foco sugerido para La Llave: el propietario publica su inmueble, recibe un postulante, solicita RentScore, ve el score y explora la solución financiera o deja su interés.
+Foco sugerido para La Llave: el propietario publica su inmueble, recibe un postulante, ve su RentScore (el inquilino ya autorizó al postular) y explora la solución financiera o deja su interés.
 
 A resolver antes del taller: usuario principal, journey mínimo, funcionalidades críticas, supuestos a validar y narrativa de demo.
 

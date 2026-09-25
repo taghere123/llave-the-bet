@@ -1,18 +1,25 @@
-# 003. El inquilino contrata y paga el seguro
+# 003. El inquilino contrata y paga un seguro de hogar
 
-**Estado:** Tomada en principio. El mecanismo exacto sigue abierto (ver 010).
+**Estado:** Tomada. Precio cerrado en 010. Corregida el 25 sept 2026.
 
 ## Contexto
-Definir quién paga la prima y cómo reemplaza la garantía tradicional.
+Definir quién paga la prima y qué cubre el seguro.
 
 ## Decisión
-El inquilino contrata y paga la prima. El propietario es el beneficiario. Reemplaza la garantía de dos meses y cubre impago, daños y responsabilidad civil del inquilino.
+El inquilino contrata y paga la prima de un seguro de hogar de Interseguro. El propietario es el beneficiario. Protege el inmueble de daños y cubre la responsabilidad civil del inquilino.
+
+**No reemplaza la garantía (depósito) ni cubre el impago de renta.** El impago lo cubre Cobro Garantizado (012).
+
+## Corrección del 25 sept 2026
+Antes decía: "reemplaza la garantía de dos meses y cubre impago, daños y responsabilidad civil del inquilino". El equipo corrigió que es un seguro de hogar para proteger la vivienda de daños, y que la garantía sigue existiendo por separado.
 
 ## Por qué
-El modelo de fianza o caución pagada por el arrendatario existe en otros mercados. Reemplaza un desembolso grande e inmovilizado por una cuota chica.
+La prima la paga quien ocupa el inmueble y genera el riesgo de daños. El propietario no paga por el seguro.
 
 ## Riesgo aceptado
-Depende de que el inquilino prefiera pagar una prima mensual a perder un depósito que hoy no le genera nada. No está validado.
+El inquilino paga una prima mensual además de la garantía. Ese costo extra puede frenar la postulación. No está validado.
 
 ## Consecuencias
-El Big Idea coincide en que paga el inquilino pero usa un porcentaje de la renta y no incluye el ahorro devuelto. Ver 010.
+- Precio: 2-5% de la renta (010).
+- Cobertura exacta (monto asegurado por daños, responsabilidad civil) por definir con Interseguro.
+- El seguro ya no reduce el riesgo de cobro del propietario: eso pasa a Cobro Garantizado. Ver 004.

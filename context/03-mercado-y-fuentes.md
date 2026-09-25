@@ -31,7 +31,7 @@ Regla del repo: ninguna cifra de "proyectado" se presenta como resultado observa
 | --- | --- | --- |
 | Ingresos año 1 (solo RentScore Seguro) | S/1.5M - S/3M | Cálculo propio, corrigiendo la cifra original de la herramienta (US$18M) |
 | Ingresos año 3 (solo RentScore Seguro) | S/15M - S/25M | Ídem |
-| Ingresos de Cobro Garantizado y Renta Adelantada | Sin cifra | Decisión explícita: no poner número sin sustento actuarial |
+| Ingresos de Cobro Garantizado y Renta Adelantada | Sin cifra | Decisión explícita: no poner número sin sustento actuarial. Los precios sí están fijados por el equipo (decisiones 012 y 016), sin sustento actuarial |
 | Penetración aseguradora MIPYME inmobiliario | menos de 5% a 30% en 3 años | Herramienta de IA, no verificado |
 | Churn de propietarios | 35% a 10% | Herramienta de IA, no verificado |
 | Siniestralidad vs. seguro tradicional | 40% menos impagos | Herramienta de IA, no verificado |

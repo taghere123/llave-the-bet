@@ -21,18 +21,35 @@ No existe código ni producto. Existen un pitch deck de 12-13 láminas, el docum
 | --- | --- | --- |
 | Marketplace inmobiliario propio | Apalancar el portal de Interbank o una alianza | Feedback externo: construir marketplace es el mayor riesgo de ejecución |
 | MVP amplio de 0-6 meses | MVP de 90 días con una sola hipótesis | La rúbrica exige factibilidad en 90 días |
-| Seguro como % de la renta | Prima fija S/15-100 al mes pagada por el inquilino, con ahorro devuelto | Propuesta del equipo. No reconciliada con el Big Idea |
-| Sin niveles 2 y 3 | Cobro Garantizado y Renta Adelantada | Sesión posterior. Renta Adelantada fuera del MVP |
+| Seguro como impago que reemplaza el depósito | Seguro de hogar (daños) pagado por el inquilino, 2-5% de la renta | Corrección del equipo del 25 sept 2026. Ver decisiones 003 y 010 |
+| Sin niveles 2 y 3 | Cobro Garantizado y Renta Adelantada | Sesión posterior. Desde el 25 sept 2026 ambos entran al MVP (012 y 016) |
 
-## Mecanismo del seguro propuesto por el equipo (sujeto a Interseguro)
+## Mecanismo del seguro (actualizado el 25 sept 2026, sujeto a Interseguro)
 
-- Prima fija de S/15 a S/100 al mes según tipo de propiedad, pagada por el inquilino.
-- Reemplaza la garantía de dos meses (impago y daños) e incluye responsabilidad civil.
-- Al llegar a umbrales acumulados de S/2,000, S/4,000 y S/10,000, la mitad se devuelve al inquilino como ahorro o retiro de libre disponibilidad.
+- Seguro de hogar que contrata y paga el inquilino. El propietario es el beneficiario. Cubre daños al inmueble y responsabilidad civil.
+- Prima de 2-5% de la renta (decisión 010).
+- No reemplaza la garantía de dos meses y no cubre impago. El impago lo cubre Cobro Garantizado (decisión 012).
+- Descartado: la prima fija de S/15-100 con devolución de ahorro (umbrales de S/2,000, S/4,000 y S/10,000) que proponía la sesión anterior.
+
+## Cobro Garantizado (decisión 012, 25 sept 2026)
+
+- Interbank deposita la renta cada mes, haya pagado o no el inquilino, y asume el impago.
+- Cobra una comisión mensual sobre la renta que cubre el impago de todos los inquilinos del programa: 3% con score alto, 5% con score medio. Sin sustento actuarial.
+- No está disponible con score bajo. Falta aprobación de Riesgos y revisión SBS.
+
+## Renta Adelantada (decisión 016, 25 sept 2026)
+
+- Entra al MVP. El propietario recibe por adelantado la renta de un contrato de 1 año, menos una comisión: 15% con score alto, 25% con medio. No disponible con score bajo.
+- Modelo de los niveles 2 y 3: Interbank evalúa al inquilino y da un préstamo de consumo a tasa cero; la comisión es la tasa de interés implícita. Reemplaza la idea de cesión de cobro (factoring).
+- Tasa implícita calculada: TEA de 36-44% con score alto y 74-95% con medio. Pendiente con Legal: transparencia (TCEA) y topes de tasa.
+
+## Autorización del inquilino (decisión 015)
+
+El inquilino autoriza que el propietario vea su RentScore al postular. El propietario no lo solicita.
 
 ## Hipótesis central del MVP
 
-El propietario paga por la garantía de cobro (RentScore + Seguro) más de lo que paga hoy por publicar su inmueble.
+El propietario paga por la garantía de cobro (RentScore + Cobro Garantizado o Renta Adelantada) más de lo que paga hoy por publicar su inmueble.
 
 ## Qué está validado y qué no
 
@@ -40,10 +57,10 @@ El propietario paga por la garantía de cobro (RentScore + Seguro) más de lo qu
 | --- | --- |
 | Tamaño del mercado de alquiler en Lima | Validado (INEI) |
 | El problema existe | Parcialmente: prensa peruana y existencia de REDJUM. Sin entrevistas formales |
-| El propietario pagaría por RentScore + Seguro | No validado. Es la hipótesis del MVP |
-| El inquilino acepta pagar prima mensual | No validado |
+| El propietario pagaría comisión por Cobro Garantizado | No validado. Es la hipótesis del MVP |
+| El inquilino acepta pagar la prima mensual del seguro de hogar además del depósito | No validado |
 | Propietarios adoptan Cobro Garantizado con comisión real | No validado. El infográfico original solo medía un formulario de interés |
-| Renta Adelantada viable en Perú | No validado. Falta definir cesión de cobro vs. crédito |
+| Renta Adelantada viable en Perú | No validado. Se define como préstamo de consumo a tasa cero (016); falta Legal y SBS |
 | El modelo existe en otros mercados | Validado con casos externos |
 
 ## Evolución del proyecto (hitos)
@@ -74,7 +91,7 @@ El propietario paga por la garantía de cobro (RentScore + Seguro) más de lo qu
 | RentScore (motor de scoring) | No implementado. Se piensa como scorecard de reglas en el MVP |
 | Póliza RentScore Seguro | No implementada |
 | Cuenta Arrendador | No implementada. Se reutilizaría el producto existente |
-| Cobro Garantizado, Renta Adelantada | No implementados. Renta Adelantada fuera del MVP |
+| Cobro Garantizado, Renta Adelantada | No implementados. Ambos dentro del MVP |
 | Portal o integración con marketplace | No implementado. Sin socio definido |
 | Validación con propietarios | Pendiente |
 | Tarificación con Interseguro | Pendiente |
@@ -93,9 +110,9 @@ El propietario paga por la garantía de cobro (RentScore + Seguro) más de lo qu
 
 ## Preguntas abiertas para el equipo
 
-1. Precio del seguro: monto fijo con ahorro o porcentaje. Ver `decisions/010`.
+1. ~~Precio del seguro~~. Cerrada: 2-5% de la renta. Ver `decisions/010`.
 2. Moneda de las cifras. Ver `decisions/011`.
-3. Cobro Garantizado con comisión real dentro del MVP o solo interés. Ver `decisions/012`.
+3. ~~Cobro Garantizado con comisión real~~. Cerrada: sí, 3% score alto y 5% medio. Ver `decisions/012`. Renta Adelantada también entra, ver `decisions/016`.
 4. Composición del jurado por etapa.
 5. Número de equipo (22 o 23).
 6. Portal específico: propio de Interbank o alianza externa. Conversación pendiente con Growth y Victoria.
@@ -107,5 +124,6 @@ El propietario paga por la garantía de cobro (RentScore + Seguro) más de lo qu
 
 - No construir marketplace propio.
 - RentScore y Seguro van juntos.
+- El seguro no reemplaza el depósito ni cubre impago.
 - El MVP cabe en 90 días.
 - No reemplazar cifras INEI sin verificar la fuente.
