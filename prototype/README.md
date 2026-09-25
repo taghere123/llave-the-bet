@@ -10,6 +10,7 @@ Abrir `src/index.html` con doble clic en el navegador. No necesita servidor, bui
 - Tres postulantes ficticios caen en banda alta, media y baja para mostrar los tres casos.
 - Todo número inventado lleva la etiqueta SUPUESTO en pantalla y está listado en `docs/supuestos.md`.
 - El progreso se guarda en `localStorage`. "Reiniciar demo" al pie vuelve al estado inicial.
+- Publicación en Vercel: `vercel.json` en la raíz copia solo `prototype/src` y `prototype/data` a `public/`. Así `context/`, `decisions/` y los originales no se publican. Al importar el repo en Vercel, dejar Root Directory en la raíz. La página lleva `noindex`.
 - No es un entregable validado: sirve para alinear al equipo antes del taller. Sin validación con usuarios.
 
 ## Journey a cubrir
