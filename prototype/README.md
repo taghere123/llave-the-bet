@@ -2,6 +2,16 @@
 
 Objetivo: un prototipo navegable del journey del propietario que sirva para la demo. No es un producto. **Todos los datos son ficticios y no hay ninguna conexión a sistemas de Interbank o Interseguro.**
 
+## Primer mockup (25 sept 2026)
+
+Abrir `src/index.html` con doble clic en el navegador. No necesita servidor, build ni instalación. Mobile-first, funciona también en escritorio.
+
+- 11 pasos: entrada, publicar, mis inmuebles, postulantes, detalle, consentimiento (vista del postulante), evaluando, RentScore, póliza, cómo cobrar, confirmación. Más una pantalla informativa de Renta Adelantada.
+- Tres postulantes ficticios caen en banda alta, media y baja para mostrar los tres casos.
+- Todo número inventado lleva la etiqueta SUPUESTO en pantalla y está listado en `docs/supuestos.md`.
+- El progreso se guarda en `localStorage`. "Reiniciar demo" al pie vuelve al estado inicial.
+- No es un entregable validado: sirve para alinear al equipo antes del taller. Sin validación con usuarios.
+
 ## Journey a cubrir
 
 1. El propietario publica su inmueble (o entra vía portal existente, simulado).
@@ -40,8 +50,8 @@ Integración bancaria real, emisión real de pólizas, marketplace propio, Renta
 ```
 prototype/
   README.md
-  src/
-  data/        JSON ficticio: inmuebles, postulantes, scores
+  src/         index.html, styles.css (tokens), app.js (pantallas), rentscore.js (reglas)
+  data/        datos.js ficticio: inmueble, postulantes (JS en vez de JSON para abrir sin servidor)
   design-system/  tokens, fundamentos y componentes de referencia
-  docs/        capturas y guion de la demo
+  docs/        supuestos.md, capturas y guion de la demo
 ```
