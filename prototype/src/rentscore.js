@@ -83,19 +83,32 @@
 
   // Prima del seguro, modelo B de la decisión 010 (2-5% de la renta), escalonada por banda. Supuesto.
   var TASA_PRIMA = { alto: 0.02, medio: 0.035, bajo: 0.05 };
-  // Comisión de Cobro Garantizado: 15% de cada renta mensual. Supuesto del equipo, sin sustento actuarial.
-  var COMISION_COBRO = 0.15;
+  // Niveles 2 y 3: préstamo de consumo de Interbank a tasa cero; la comisión es el interés implícito.
+  // Con score bajo no se ofrecen. Cifras del equipo, sin sustento actuarial (decisiones 012 y 016).
+  var COMISION_COBRO = { alto: 0.03, medio: 0.05 };    // sobre cada renta mensual
+  var COMISION_ADELANTO = { alto: 0.15, medio: 0.25 }; // sobre la renta de 12 meses (contrato de 1 año)
+  var MESES_ADELANTO = 12;
 
   function prima(renta, banda) {
     return { tasa: TASA_PRIMA[banda], monto: Math.round(renta * TASA_PRIMA[banda]) };
   }
 
-  function cobroGarantizado(renta) {
-    var comision = Math.round(renta * COMISION_COBRO);
-    return { tasa: COMISION_COBRO, comision: comision, deposito: renta - comision, anual: comision * 12 };
+  function cobroGarantizado(renta, banda) {
+    var tasa = COMISION_COBRO[banda];
+    if (tasa === undefined) return { disponible: false };
+    var comision = Math.round(renta * tasa);
+    return { disponible: true, tasa: tasa, comision: comision, deposito: renta - comision, anual: comision * 12 };
   }
 
-  var api = { calcular: calcular, prima: prima, cobroGarantizado: cobroGarantizado };
+  function rentaAdelantada(renta, banda) {
+    var tasa = COMISION_ADELANTO[banda];
+    if (tasa === undefined) return { disponible: false };
+    var total = renta * MESES_ADELANTO;
+    var comision = Math.round(total * tasa);
+    return { disponible: true, tasa: tasa, meses: MESES_ADELANTO, total: total, comision: comision, desembolso: total - comision };
+  }
+
+  var api = { calcular: calcular, prima: prima, cobroGarantizado: cobroGarantizado, rentaAdelantada: rentaAdelantada };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.RentScore = api;
 })(this);
