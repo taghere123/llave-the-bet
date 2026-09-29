@@ -1,6 +1,12 @@
 # 001. No construir un marketplace inmobiliario propio
 
-**Estado:** Tomada
+**Estado:** Reemplazada por la decisión 017 el 29 sept 2026. Se conserva por trazabilidad.
+
+> **Nota (29 sept 2026):** esta decisión ya no está vigente. El equipo decidió construir un marketplace propio de LLAVE con flujo de inquilino, y que entre al piloto de 90 días. Ver `017-marketplace-propio.md`. El contenido original se mantiene abajo sin cambios.
+
+---
+
+**Estado original:** Tomada
 
 ## Contexto
 El diseño original incluía un marketplace similar a Urbania o Adondevivir como puerta de entrada.

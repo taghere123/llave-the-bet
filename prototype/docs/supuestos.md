@@ -13,6 +13,10 @@ Todo lo que aparece en pantalla con la etiqueta **SUPUESTO** está aquí. Nada d
 | Autorización del RentScore | El postulante la da al postular, desde el inicio. La propietaria no la solicita: ve el score de cada postulante | 015, tomada el 25 sept 2026 |
 | Qué es el seguro | Seguro de hogar que contrata y paga el inquilino para proteger el inmueble de daños. No reemplaza la garantía y no cubre impago | 003, corregida el 25 sept 2026. Cobertura y monto asegurado por definir con Interseguro |
 | Portal | Estética del portal Zona Hipotecaria de Interbank, marca LLAVE provisional, sin logotipo de Interbank | 013 |
+| Marketplace | LLAVE tiene marketplace propio con flujo de inquilino y entra al piloto | 017, tomada el 29 sept 2026 |
+| Registro del inquilino | Lead form: nombre, apellido, DNI, email, celular, más un código de verificación simulado. Sin contraseña. Esquema abierto para pedir más datos después | Elección del equipo para el prototipo |
+| Inquilino no cliente | Puede postular. Su score sale de "centrales de riesgo" simuladas. Es un lead de bancarización | 017. Corrige la exclusión que el handoff ya había marcado como error |
+| Deudor de niveles 2 y 3 | El inquilino es el deudor; el propietario, el beneficiario; el propietario absorbe la comisión | 018, tomada el 29 sept 2026. Falta Legal, Riesgos y SBS |
 
 ## Reglas inventadas para que la demo funcione
 
@@ -23,6 +27,10 @@ Todo lo que aparece en pantalla con la etiqueta **SUPUESTO** está aquí. Nada d
 | Bandas de score | 0-39 bajo, 40-69 medio, 70-100 alto | Provisionales según el design system |
 | Pesos del score | Renta/ingreso 30, estabilidad 20, deuda 20, puntualidad 20, antigüedad 10 | Scorecard ilustrativo. Ver `src/rentscore.js` |
 | Rango de mercado | S/1,650 a S/2,000 para 2 dorm. en Surquillo | Inventado. No hay fuente verificada de rentas por distrito en `context/03` |
+| Inventario del marketplace | 8-10 propiedades ficticias en Lima Moderna, incluida la de Carmen | Inventado para la demo. No hay avisos reales |
+| Score del inquilino no cliente | Se calcula con una "central de riesgo" simulada a partir de datos ficticios | No hay integración real con centrales. Ver `src/rentscore.js` |
+| Cliente / no cliente de Interbank | Se deriva del DNI ficticio del inquilino | Regla inventada solo para la demo |
+| % de postulantes nuevos para el banco | Métrica principal del flujo del inquilino, sobre datos ficticios | Elección del equipo. Sin línea base real |
 | Depósito de Cobro Garantizado | Día 5 de cada mes | Inventado |
 | Siniestro pagado en 15 días hábiles | Tal cual | Diseño del Big Idea, no validado con Interseguro |
 | RentScore gratuito para el propietario | S/0 | "Gratuito" referencial del Big Idea |
@@ -33,7 +41,6 @@ Carmen (52, Surquillo, S/1,800) y los tres postulantes (Lucía, Jorge, Kevin) so
 
 ## Lo que el prototipo deja fuera a propósito
 
-- Postulantes sin cuenta en Interbank (Score Híbrido con REDJUM). El handoff corrigió que no se les excluya; el mockup no muestra ese caso.
 - Texto legal del consentimiento: pendiente con Legal.
 - Plazo de cálculo del RentScore: el prototipo lo muestra al instante; el Big Idea decía hasta 48 horas.
 - Cobertura y monto asegurado por daños, y si el 2-5% de la renta es sostenible para un seguro de hogar (decisión 010).

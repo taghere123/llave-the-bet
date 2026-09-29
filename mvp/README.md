@@ -13,19 +13,25 @@ El propietario paga por la garantía de cobro (RentScore + Cobro Garantizado o R
 - Un subconjunto de propietarios adopta Cobro Garantizado pagando comisión real: 3% de la renta con score alto, 5% con medio (decisión 012).
 - Un subconjunto de propietarios adopta Renta Adelantada de un año: 15% con score alto, 25% con medio (decisión 016).
 - El seguro se puede tarificar de forma sostenible con el score (decisión 010, falta Interseguro).
+- El inquilino deja sus datos en un lead form para postular, y una parte de esos inquilinos no es cliente de Interbank (leads de bancarización). El % de postulantes nuevos para el banco es la métrica principal del flujo del inquilino (decisión 017).
+- El inquilino acepta figurar como deudor de un préstamo de consumo cuando el propietario elige una modalidad de pago garantizado (decisión 018).
 
 ## Qué entra y qué no
 
 | Entra | No entra |
 | --- | --- |
-| Nivel 0 RentScore (scorecard de reglas) | Marketplace propio |
+| Nivel 0 RentScore (scorecard de reglas) | Housing Graph |
 | Nivel 1 RentScore Seguro | Contratos de más de 1 año en Renta Adelantada |
-| Cuenta Arrendador existente, con etiqueta | Housing Graph |
-| Integración liviana con un portal existente | Modelo de ML |
-| Niveles 2 y 3, solo score medio o alto, como préstamo de consumo a tasa cero (012 y 016) | Expansión fuera de Lima |
+| Cuenta Arrendador existente, con etiqueta | Modelo de ML |
+| Marketplace propio con flujo de inquilino (decisión 017) | Expansión fuera de Lima |
+| Niveles 2 y 3, solo score medio o alto, como préstamo de consumo a tasa cero (012 y 016) | |
+| Inquilinos sin cuenta Interbank: postulan y su score sale de centrales de riesgo (leads de bancarización) | |
+
+**Cambio de alcance (29 sept 2026, decisión 017):** el marketplace propio pasó de "No entra" a "Entra". Esto añade riesgo de factibilidad en 90 días, el mismo que la 001 quería evitar. El equipo lo asume para controlar la adquisición del inquilino y el dato. Falta dimensionar inventario inicial, carga de avisos, tráfico y su costo; ver "Por completar".
 
 ## Por completar
 
+- Marketplace (decisión 017): inventario inicial, cómo se cargan los avisos, de dónde sale el tráfico de inquilinos y su costo de adquisición. Es el riesgo de factibilidad nuevo del piloto.
 - Segmento y tamaño del piloto: cuántos propietarios y cuántas pólizas.
 - Métricas de éxito y umbrales: conversión a póliza, prima pagada, disposición a pagar, siniestralidad temprana, renovación.
 - Cronograma día 0 a 90.

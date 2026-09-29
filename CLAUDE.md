@@ -12,7 +12,7 @@ No hay producto, ni código, ni validación con usuarios. No describir nada como
 
 ## Decisiones vigentes (no revertir sin abrir una decisión en `decisions/`)
 
-1. No construir marketplace propio. Se apalanca el portal de Interbank o una alianza.
+1. Marketplace propio de LLAVE con flujo de inquilino, y entra al piloto (decisión 017, reemplaza a la 001). El inquilino busca, se registra, autoriza su RentScore y postula dentro de LLAVE.
 2. RentScore y Seguro van juntos, por selección adversa.
 3. El inquilino contrata y paga el seguro de hogar (2-5% de la renta, decisión 010). El propietario es el beneficiario. No reemplaza el depósito ni cubre impago.
 4. El MVP cabe en 90 días y prueba una sola hipótesis: el propietario paga por la garantía de cobro (Cobro Garantizado o Renta Adelantada) más de lo que paga hoy por publicar.
@@ -20,11 +20,18 @@ No hay producto, ni código, ni validación con usuarios. No describir nada como
 6. Cobro Garantizado se prueba con comisión real en el MVP (decisión 012): 3% de cada renta con score alto, 5% con score medio, no disponible con score bajo. Interbank asume el impago.
 7. El inquilino autoriza que el propietario vea su RentScore al postular (decisión 015). El propietario no lo solicita.
 8. Renta Adelantada entra al MVP (decisión 016): solo contratos de 1 año; comisión de 15% de la renta del año con score alto, 25% con medio, no disponible con score bajo. Cifras de 012 y 016 del equipo, sin sustento actuarial.
+9. En Cobro Garantizado y Renta Adelantada el deudor es el inquilino y el beneficiario es el propietario (decisión 018). Interbank presta al inquilino, paga al propietario, el inquilino devuelve mes a mes; la comisión la absorbe el propietario. Falta Legal, Riesgos y SBS.
+
+## Los tres dolores que resuelve LLAVE (marco de negocio re-consensuado, 29 sept 2026)
+
+1. Saber a quién le alquilo: RentScore.
+2. Que me paguen puntual: Cobro Garantizado y Renta Adelantada (préstamo de consumo a tasa cero; en la narrativa el equipo lo llama "factoring", pero la estructura es la de la decisión 016).
+3. Que no me destruyan la casa: seguro de hogar que paga el inquilino.
 
 ## Decisiones abiertas (no resolver por tu cuenta, señalarlas)
 
 - 011: moneda y cifras de ingresos.
-- 013: portal propio de Interbank o alianza.
+- 013: portal propio de Interbank o alianza. Ya no bloquea el flujo del inquilino (hay marketplace propio, 017); sigue abierta como canal adicional de inventario y tráfico.
 - 014: número de equipo y composición del jurado.
 
 Pendientes de las decisiones tomadas: tarificar el seguro con Interseguro (010), aprobación de Riesgos y revisión de Legal y SBS de los niveles 2 y 3 como crédito de consumo, incluida la transparencia de la tasa implícita (012 y 016), texto legal de la autorización (015).
@@ -39,7 +46,9 @@ Pendientes de las decisiones tomadas: tarificar el seguro con Interseguro (010),
 
 ## Hito inmediato
 
-Taller AI-DLC, 29-30 sept 2026. Entregable: prototipo navegable del journey del propietario: publica inmueble, recibe postulante, ve el score (el inquilino ya autorizó al postular), explora solución financiera o deja interés.
+Taller AI-DLC, 29-30 sept 2026. Entregable: prototipo navegable de dos journeys conectados.
+- Propietario: publica inmueble, recibe postulante, ve el score (el inquilino ya autorizó al postular), explora solución financiera o deja interés.
+- Inquilino: busca en el marketplace, abre una ficha, se registra (lead form), autoriza su RentScore y postula. El inquilino que postula al inmueble del propietario aparece en su bandeja de postulantes. Protagonista de la demo: el propietario.
 
 ## Dónde mirar
 
