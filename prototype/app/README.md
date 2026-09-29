@@ -13,6 +13,7 @@ npm run dev       # servidor local con recarga
 npm run check     # typecheck + lint + formato + pruebas
 npm run build     # genera dist/ (sitio estático)
 npm run preview   # sirve dist/ localmente
+npm run build:local  # genera ../../local_deploy/app/, que se abre con doble clic (ver local_deploy/README.md)
 ```
 
 Vercel usa `vercel.json` en la raíz del repo: instala y construye esta carpeta y publica `prototype/app/dist`.

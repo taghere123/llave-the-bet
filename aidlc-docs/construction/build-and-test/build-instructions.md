@@ -24,7 +24,13 @@ npm run build   # tsc --noEmit && vite build
 - **Sin scripts inline** en `dist/index.html`, así la CSP de `vercel.json` (`script-src 'self'`) no los bloquea.
 - **Prueba local**: `npm run preview` y abrir http://localhost:4173/#/inicio.
 
-### 4. Deploy (Vercel)
+### 4. Deploy local (sin Node)
+```bash
+npm run build:local   # vite build --mode local-deploy → local_deploy/app/
+```
+Genera un build con un script clásico (IIFE) y el CSS incluido en el JS, para que `local_deploy/app/index.html` funcione con doble clic desde `file://`. `local_deploy/servir.command` lo sirve en http://localhost:8080 (solo en 127.0.0.1) con Python 3. Se verificó cargándolo por `file://` en jsdom (inicio, marketplace con 9 propiedades y panel de demo, sin errores) y sirviéndolo por HTTP (200).
+
+### 5. Deploy (Vercel)
 `vercel.json` en la raíz ejecuta `npm ci --prefix prototype/app` y `npm run build --prefix prototype/app`, y publica `prototype/app/dist`. Root Directory: raíz del repo.
 
 ## Troubleshooting

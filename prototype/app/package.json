@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:local": "tsc --noEmit && vite build --mode local-deploy",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

@@ -207,3 +207,11 @@ Registro completo de interacciones del ciclo AI-DLC para el proyecto LLAVE (The 
 **Pendientes**: revisión manual de paridad visual; verificación de cabeceras post-deploy; commit/PR no realizado (requiere pedido explícito del usuario).
 
 ---
+
+## Build and Test — Deploy local
+**Timestamp**: 2026-09-29T16:05:00Z
+**User Input**: "podemos crear una versión para hacer un deployment local? en una carpeta local_deploy"
+**AI Response**: "Agregado el script build:local (modo Vite 'local-deploy'; 'local' está reservado por Vite) que genera local_deploy/app/ como IIFE con script clásico, apto para file://. Agregados local_deploy/README.md y local_deploy/servir.command (python3 http.server en 127.0.0.1:8080). Verificado: carga por file:// sin errores, HTTP 200, npm run check en verde (64/64), el build de Vercel sigue usando módulos ES."
+**Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario)
+
+---
