@@ -2,7 +2,13 @@
 
 Objetivo: un prototipo navegable del journey del propietario que sirva para la demo. No es un producto. **Todos los datos son ficticios y no hay ninguna conexión a sistemas de Interbank o Interseguro.**
 
-## Primer mockup (25 sept 2026)
+## App migrada (29 sept 2026, ciclo AI-DLC)
+
+La versión vigente vive en `app/` (Vite + React + TypeScript). Tiene los dos journeys conectados, pruebas automatizadas y los módulos de RentScore, Legal, pagos y datos detrás de providers simulados (decisión 019). Cómo correrla: `app/README.md`. Vercel publica `app/dist`. Documentación del ciclo: `aidlc-docs/` en la raíz del repo.
+
+`src/` y `data/` quedan como **prototipo legado**. Sirven como referencia de paridad visual y como oráculo de la prueba diferencial del RentScore, así que no hay que borrarlos. El legado solo tiene el journey del propietario: el del inquilino que se describe abajo está implementado en `app/`.
+
+## Primer mockup (25 sept 2026, legado)
 
 Abrir `src/index.html` con doble clic en el navegador. No necesita servidor, build ni instalación. Mobile-first, funciona también en escritorio.
 
@@ -12,7 +18,7 @@ Abrir `src/index.html` con doble clic en el navegador. No necesita servidor, bui
 - Responsive: una columna en móvil y 2 a 3 columnas desde 720px, dentro del contenedor de 896px del design system. Las ilustraciones son SVG inline con la paleta de `tokens.json`; no hay fotos ni archivos de imagen.
 - Todo número inventado lleva la etiqueta SUPUESTO en pantalla y está listado en `docs/supuestos.md`.
 - El progreso se guarda en `localStorage`. "Reiniciar demo" al pie vuelve al estado inicial.
-- Publicación en Vercel: `vercel.json` en la raíz copia solo `prototype/src` y `prototype/data` a `public/`. Así `context/`, `decisions/` y los originales no se publican. Al importar el repo en Vercel, dejar Root Directory en la raíz. La página lleva `noindex`.
+- Publicación en Vercel (desde el 29 sept): `vercel.json` en la raíz construye `prototype/app` y publica solo `prototype/app/dist`. Así `context/`, `decisions/` y los originales no se publican. Al importar el repo en Vercel, dejar Root Directory en la raíz. La página lleva `noindex` y cabeceras de seguridad (CSP, HSTS, nosniff, X-Frame-Options, Referrer-Policy).
 - No es un entregable validado: sirve para alinear al equipo antes del taller. Sin validación con usuarios.
 
 ## Journeys a cubrir

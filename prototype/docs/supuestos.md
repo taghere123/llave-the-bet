@@ -27,17 +27,21 @@ Todo lo que aparece en pantalla con la etiqueta **SUPUESTO** está aquí. Nada d
 | Bandas de score | 0-39 bajo, 40-69 medio, 70-100 alto | Provisionales según el design system |
 | Pesos del score | Renta/ingreso 30, estabilidad 20, deuda 20, puntualidad 20, antigüedad 10 | Scorecard ilustrativo. Ver `src/rentscore.js` |
 | Rango de mercado | S/1,650 a S/2,000 para 2 dorm. en Surquillo | Inventado. No hay fuente verificada de rentas por distrito en `context/03` |
-| Inventario del marketplace | 8-10 propiedades ficticias en Lima Moderna, incluida la de Carmen | Inventado para la demo. No hay avisos reales |
-| Score del inquilino no cliente | Se calcula con una "central de riesgo" simulada a partir de datos ficticios | No hay integración real con centrales. Ver `src/rentscore.js` |
-| Cliente / no cliente de Interbank | Se deriva del DNI ficticio del inquilino | Regla inventada solo para la demo |
-| % de postulantes nuevos para el banco | Métrica principal del flujo del inquilino, sobre datos ficticios | Elección del equipo. Sin línea base real |
+| Inventario del marketplace | 9 propiedades ficticias en Lima Moderna, incluida la de Carmen | Inventado para la demo. No hay avisos reales. Ver `app/src/data/fixtures.ts` |
+| Score del inquilino no cliente | Se calcula con una "central de riesgo" simulada a partir de datos ficticios. Para no clientes, el factor de antigüedad usa los años en el sistema financiero | No hay integración real con centrales. Ver `app/src/providers/simulated/dataProvider.ts` |
+| Cliente / no cliente de Interbank | Jorge y Kevin son clientes; Lucía no. Cualquier otro DNI: terminado en dígito par = cliente | Regla inventada solo para la demo |
+| Perfil financiero de un DNI nuevo | Se deriva de los dígitos del DNI (ingreso S/2,500-7,400, deuda 5-40%, puntualidad 76-97%) | Sirve para que cualquier DNI escrito en la demo tenga un score estable. No representa a nadie |
+| Código de verificación | Se acepta cualquier código de 6 dígitos; la pantalla sugiere 123456 | No hay envío real de SMS |
+| Mi RentScore sin propiedad elegida | Se calcula para una renta igual a la cuota segura del inquilino | El score depende de la renta; hace falta una referencia |
+| Consejos para mejorar el score | Los 2 factores más débiles, con un texto por factor | Textos del equipo, sin validar con Riesgos |
+| % de postulantes nuevos para el banco | Personas únicas (postulantes y leads) no clientes ÷ total. Arranca en 0% (Jorge y Kevin son clientes) y sube a 33% con Lucía | Elección del equipo. Sin línea base real. Solo en el Panel de demo |
 | Depósito de Cobro Garantizado | Día 5 de cada mes | Inventado |
 | Siniestro pagado en 15 días hábiles | Tal cual | Diseño del Big Idea, no validado con Interseguro |
 | RentScore gratuito para el propietario | S/0 | "Gratuito" referencial del Big Idea |
 
 ## Personas y datos
 
-Carmen (52, Surquillo, S/1,800) y los tres postulantes (Lucía, Jorge, Kevin) son ficticios. Sus datos están en `data/datos.js`. Ningún dato es real.
+Carmen (52, Surquillo, S/1,800) y los tres postulantes (Lucía, Jorge, Kevin) son ficticios. En la app (`app/src/data/fixtures.ts`), la bandeja de Carmen arranca con Jorge y Kevin, y Lucía llega desde el marketplace. En el prototipo legado sus datos están en `data/datos.js`. Ningún dato es real, incluidos los DNI, emails y celulares.
 
 ## Lo que el prototipo deja fuera a propósito
 

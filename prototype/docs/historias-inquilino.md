@@ -174,6 +174,10 @@ Como equipo en la demo, quiero mostrar el % de postulantes nuevos para el banco,
 ## Preguntas abiertas para ti
 
 1. En HU-02, ¿mostramos el rango del seguro (2-5%) o un solo número estimado (p. ej. el punto medio) para que la ficha se lea más simple?
+Punto medio.
 2. En HU-06, si el score es bajo, ¿mostramos igual las modalidades de pago garantizado como "no disponibles para ti" o no las mencionamos en el lado del inquilino?
+Que salga como "no disponible para ti"
 3. ¿Cuántas propiedades quieres en el marketplace: 8 alcanza para que se vea poblado, o prefieres 10-12?
+poblado
 4. ¿El indicador de bancarización (HU-12) va visible en la pantalla del inquilino, o solo en una vista de demo para el jurado?
+solo para jurado

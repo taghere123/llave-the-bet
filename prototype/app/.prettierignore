@@ -1,0 +1,5 @@
+dist
+node_modules
+package-lock.json
+# Copia literal de prototype/src/styles.css (paridad con el legado): no reformatear.
+src/styles/base.css

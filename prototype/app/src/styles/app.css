@@ -1,0 +1,162 @@
+/* Estilos nuevos de la migración: cabecera con cambio de rol, marketplace, formularios del inquilino
+   y panel de demo. Solo tokens de base.css. */
+
+/* ---------- Cabecera: cambio de rol ---------- */
+.hd-der {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hd-cambio {
+  font-size: 12px;
+  line-height: 16px;
+}
+.hd.postulante .hd-cambio {
+  color: var(--sky-300);
+}
+@media (max-width: 479px) {
+  .hd-rol > span {
+    display: none;
+  }
+}
+
+.badge.centro {
+  align-self: center;
+}
+
+/* ---------- Pie ---------- */
+.pie-acc {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ---------- Marketplace ---------- */
+.pc-link {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s;
+}
+.pc-link:hover {
+  border-color: var(--border-strong);
+}
+.pc-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.filtros {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.filtros .acc {
+  display: flex;
+  align-items: flex-end;
+}
+.vacio {
+  text-align: center;
+  padding: 32px 16px;
+}
+
+/* ---------- Formularios ---------- */
+.field .err {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--status-danger);
+  font-weight: 600;
+}
+.field input[aria-invalid='true'] {
+  border-color: var(--status-danger);
+  box-shadow: inset 0 0 0 1px var(--status-danger);
+}
+.field .ayuda {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-muted);
+}
+.codigo {
+  letter-spacing: 6px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ---------- Postulaciones ---------- */
+.po {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+}
+.po-t {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.po-acc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  width: 100%;
+}
+.consejos {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* ---------- Panel de demo ---------- */
+.demo {
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.demo .eye {
+  color: var(--text-muted);
+}
+.demo-acc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.demo-acc .btn {
+  width: auto;
+}
+.kpi {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: 500;
+}
+
+/* Ocultar visualmente, mantener para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 720px) {
+  .filtros {
+    grid-template-columns: 1fr 1fr 1fr auto;
+    align-items: end;
+  }
+  .po-acc {
+    width: auto;
+  }
+}
