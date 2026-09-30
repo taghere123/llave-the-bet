@@ -125,5 +125,5 @@ El propietario paga por la garantía de cobro (RentScore + Cobro Garantizado o R
 - No construir marketplace propio.
 - RentScore y Seguro van juntos.
 - El seguro no reemplaza el depósito ni cubre impago.
-- El MVP cabe en 90 días.
+- El MVP cabe en 90 días. *(Nota del 30 sept 2026: el piloto pasó a 30 días, decisión 026.)*
 - No reemplazar cifras INEI sin verificar la fuente.

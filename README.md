@@ -18,7 +18,7 @@ Hay propuesta y un prototipo navegable con datos ficticios y dos journeys conect
 | `context/originals/` | Archivos originales (docx, PDF, imágenes) |
 | `decisions/` | Decisiones tomadas y decisiones abiertas, una por archivo |
 | `prototype/` | Prototipo navegable con datos falsos (taller AI-DLC) |
-| `mvp/` | Especificación del piloto de 90 días |
+| `mvp/` | Especificación del piloto de 30 días |
 | `prototype/app/public/walkthrough/` | Guía navegable con capturas de ambos journeys, para quien no conoce el proyecto. Se abre desde el pie de la app ("Guía de la demo") |
 | `scripts/` | Utilidades, incluido el script para crear los issues iniciales |
 | `CLAUDE.md` | Contexto para herramientas de IA. Se lee automáticamente |

@@ -13,15 +13,15 @@ Al desarrollar el flujo del inquilino aparece un problema: sin una superficie pr
 3. Híbrido: mock del portal aliado con LLAVE como capa "Postula con RentScore".
 
 ## Criterio
-Control del momento de adquisición del inquilino y del dato, frente al riesgo de ejecución en 90 días que motivó la 001.
+Control del momento de adquisición del inquilino y del dato, frente al riesgo de ejecución en el piloto que motivó la 001.
 
 ## Decisión
-Opción 2. LLAVE tiene marketplace propio con flujo de inquilino completo: buscar, ver ficha, registrarse (lead form), autorizar el RentScore y postular. **Entra al piloto de 90 días, no solo al prototipo.**
+Opción 2. LLAVE tiene marketplace propio con flujo de inquilino completo: buscar, ver ficha, registrarse (lead form), autorizar el RentScore y postular. **Entra al piloto de 30 días (decisión 026), no solo al prototipo.**
 
 ## Consecuencias
 - La decisión 001 queda **reemplazada por esta**. No se revierte en silencio: se documenta aquí.
 - Cambia el alcance del MVP (004). El marketplace propio entra a la tabla "Entra" de `mvp/README.md`. Se asume el riesgo de ejecución que la 001 quería evitar; el equipo lo acepta a cambio de controlar la adquisición del inquilino y el dato.
 - Se pierde el argumento de "no construir marketplace" frente al jurado. A cambio, la demo muestra el círculo completo: el inquilino postula y aparece en la bandeja del propietario.
 - La 013 (portal propio o alianza) deja de ser bloqueante para el flujo del inquilino, pero sigue abierta como canal adicional de inventario y tráfico.
-- Riesgo de factibilidad en 90 días a vigilar: construir y operar un marketplace es mucho más que el mock de la 013. El equipo debe dimensionar inventario inicial, carga de avisos y tráfico en `mvp/README.md`.
+- Riesgo de factibilidad en el piloto de 30 días a vigilar: construir y operar un marketplace es mucho más que el mock de la 013. El equipo debe dimensionar inventario inicial, carga de avisos y tráfico en `mvp/README.md`.
 - El prototipo del taller ya incluye el flujo del inquilino sobre este supuesto.

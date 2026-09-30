@@ -2,6 +2,8 @@
 
 > **Qué es:** copia versionada del doc vivo «La Llave — Recomendaciones iniciales para la final» en Claude Docs ([enlace](https://claude.ai/code/artifact/4eed856b-4c08-4bb7-ad2a-a13550ff75b1); solo lo abre quien tenga acceso compartido). Si ambos difieren, manda esta copia hasta que un PR la actualice.
 >
+> **Actualización (30 sept 2026):** los plazos pasan a un piloto de 30 días (`decisions/026`): gates en los días 5, 15 y 30, antes 15, 45 y 90. El mercado pasa a 700 mil hogares (`03-mercado-y-fuentes.md`). El resto del texto no cambió.
+>
 > **Fecha:** 29 sept 2026. **Autor:** Diego Moscoso, con Claude. **Estado:** propuesta para discusión del equipo; no cierra ninguna decisión.
 >
 > **Relación con decisiones:** las propuestas que cambian decisiones vigentes están abiertas en `decisions/021` a `decisions/025`. Los hechos verificados están en `03-mercado-y-fuentes.md`.
@@ -10,7 +12,7 @@
 
 ## Resumen ejecutivo
 
-LLAVE ya tiene lo más difícil: un dolor claro y dos journeys conectados que se pueden demostrar. Hoy puntuaría por debajo de su potencial por cuatro huecos: el impacto no tiene cifra propia, la novedad se afirma de forma frágil, el MVP es muy ancho para 90 días y la demo termina antes de cumplir la promesa.
+LLAVE ya tiene lo más difícil: un dolor claro y dos journeys conectados que se pueden demostrar. Hoy puntuaría por debajo de su potencial por cuatro huecos: el impacto no tiene cifra propia, la novedad se afirma de forma frágil, el MVP es muy ancho para un piloto de 30 días y la demo termina antes de cumplir la promesa.
 
 **La frase de 30 segundos (propuesta).** Casi 1 de cada 4 viviendas de Lima se alquila y el propietario elige inquilino a ciegas. Con LLAVE, Interbank evalúa al inquilino e Interseguro protege el inmueble; el propietario cobra el día 5, pague o no el inquilino. Y el inquilino construye historial crediticio pagando su alquiler, algo que hoy no le suma.
 
@@ -95,7 +97,7 @@ Cuatro reglas que no se negocian al cambiar la UI:
 3. **0:50-1:20 · La bandeja decide.** Lucía es garantizable; Jorge no, porque la renta supera su capacidad; Kevin tiene score bajo.
 4. **1:20-2:00 · Decide y protege.** Carmen acepta a Lucía: el seguro de S/36 al mes lo paga Lucía, y Carmen activa Cobro Garantizado por S/54 al mes.
 5. **2:00-2:30 · El mes 4.** Lucía no paga. Carmen recibe S/1,746 el día 5 e Interbank gestiona el pago con Lucía.
-6. **2:30-3:00 · El cierre.** Lucía era invisible para el banco y hoy construye historial. Pedido al jurado: 90 días, un squad y un tope de pérdida en soles.
+6. **2:30-3:00 · El cierre.** Lucía era invisible para el banco y hoy construye historial. Pedido al jurado: 30 días, un squad y un tope de pérdida en soles.
 
 ## Definiciones de negocio: del catálogo de niveles al contrato garantizado
 
@@ -160,7 +162,7 @@ Con las seis jugadas, el puntaje ponderado estimado sube de 2.65 a 4.15 sobre 5.
 | --- | --- | --- | --- | --- | --- |
 | Impacto potencial | 40% | 2.5 | 4.0 | Cifras heredadas de la herramienta de IA, sin ingresos para los niveles 2 y 3 y sin evidencia de demanda | Caso base por contrato (decisión 011), North Star, entrevistas con prueba de precio y contratos ya existentes |
 | Necesidad y enfoque innovador | 30% | 3.5 | 4.5 | Dolor real pero sin entrevistas formales; «no existe en Latinoamérica» es falso | Novedad acotada con fuentes (en el Perú no encontramos garantía de renta), el alquiler como historial crediticio y el pasaporte portátil |
-| Factibilidad (MVP en 90 días) | 30% | 2.0 | 4.0 | Cuatro niveles, marketplace propio y dos productos de crédito sin aprobación de Riesgos, Legal ni SBS | Estructura legal cerrada antes del día 0, tope de pérdida en soles, Renta Adelantada acotada y marketplace liviano |
+| Factibilidad (rúbrica: MVP en 90 días; piloto de 30) | 30% | 2.0 | 4.0 | Cuatro niveles, marketplace propio y dos productos de crédito sin aprobación de Riesgos, Legal ni SBS | Estructura legal cerrada antes del día 0, tope de pérdida en soles, Renta Adelantada acotada y marketplace liviano |
 | **Total ponderado** | 100% | **2.65** | **4.15** | | |
 
 Es una estimación cualitativa para priorizar, hecha sobre el repositorio al 29 sept 2026. No predice la nota del jurado.
@@ -181,12 +183,12 @@ El jurado va a atacar riesgo, legalidad y demanda antes que la interfaz. Cada re
 | 8 | ¿Cómo recuperan el inmueble si no paga? | Con contratos listos para desalojo notarial (Ley 30933): FUA o escritura pública, dos cláusulas y la renta abonada en una cuenta supervisada por la SBS. La Cuenta Arrendador cumple ese requisito | Modelo de contrato revisado por Legal |
 | 9 | ¿Cómo evitan la selección adversa? | El seguro y la garantía solo se ofrecen después del score. Son elegibles las bandas media y alta con renta dentro de la capacidad de pago | Reglas aprobadas por Riesgos (decisión 021) |
 | 10 | ¿Cómo verifican el ingreso de quien no es cliente? | Hoy el prototipo lo simula. Con su consentimiento, el inquilino sustenta su ingreso; mientras no esté verificado, se usa una capacidad de pago conservadora | Fuente de ingreso para no clientes definida con Riesgos |
-| 11 | ¿Qué aprenden de riesgo en solo 90 días? | Poco, y lo decimos: con 100 contratos jóvenes, incluso 10% de impago anual daría 1 o 2 casos. El riesgo se estima con un backtest y se confirma con 12 meses de seguimiento | Backtest del RentScore sobre clientes que ya pagan alquiler por transferencia, con Legal |
+| 11 | ¿Qué aprenden de riesgo en solo 30 días? | Poco, y lo decimos: con 100 contratos jóvenes, incluso 10% de impago anual daría 1 o 2 casos. El riesgo se estima con un backtest y se confirma con 12 meses de seguimiento | Backtest del RentScore sobre clientes que ya pagan alquiler por transferencia, con Legal |
 | 12 | ¿Para qué un marketplace si ya existen portales? | No competimos por avisos: el Pasaporte RentScore funciona en cualquier aviso, y el marketplace es la vitrina mínima del piloto | Costo de tráfico y revisión de la 017 (decisión 023) |
 | 13 | ¿Cómo consiguen propietarios sin gastar en medios? | Muchos ya están en la base: clientes que reciben transferencias recurrentes de montos de alquiler. Se usará solo con aprobación de Legal | Conteo validado por Legal y Compliance |
-| 14 | ¿De qué tamaño es la oportunidad? | La provincia de Lima tenía 520,202 viviendas alquiladas en 2017; el equipo estima 650-700 mil hogares hoy. Por contrato de S/1,800, el grupo cobra S/1,080 a S/1,836 al año antes de pérdidas | Caso base de la decisión 011 |
+| 14 | ¿De qué tamaño es la oportunidad? | La provincia de Lima tenía 520,202 viviendas alquiladas en 2017; el equipo estima 700 mil hogares hoy. Por contrato de S/1,800, el grupo cobra S/1,080 a S/1,836 al año antes de pérdidas | Caso base de la decisión 011 |
 | 15 | ¿Qué pasa con los datos y el sesgo del algoritmo? | El propietario ve score y capacidad, nunca movimientos ni saldos. El consentimiento es granular y revocable, y el score se explica por factores | Revisión de Legal (Ley 29733) y de Riesgos sobre las variables |
-| 16 | ¿Qué nos piden y cuánto podemos perder? | Noventa días, un squad de cinco personas y un tope de pérdida. Si los 100 contratos dejaran de pagar desde el mes 4, se perderían S/1.2 millones; con 5% de impago severo, unos S/60 mil | Costo real del squad, no la cifra de IA de US$400-500K; cada Renta Adelantada expone hasta S/18,360 |
+| 16 | ¿Qué nos piden y cuánto podemos perder? | Treinta días, un squad de cinco personas y un tope de pérdida. Si los 100 contratos dejaran de pagar desde el mes 4, se perderían S/1.2 millones; con 5% de impago severo, unos S/60 mil | Costo real del squad, no la cifra de IA de US$400-500K; cada Renta Adelantada expone hasta S/18,360 |
 
 ### Precedentes que el jurado puede citar
 
@@ -202,11 +204,11 @@ La categoría existe y escala en la región. En el Perú no encontramos una gara
 
 La necesidad tiene voz propia: en 2024 la Cámara Inmobiliaria Peruana propuso un seguro contra inquilinos morosos y dijo que el alquiler «es como un crédito a mediano plazo» ([Gestión](https://gestion.pe/tu-dinero/inmobiliarias/nuevo-seguro-inmobiliario-la-propuesta-de-la-cip-para-asegurar-a-propietarios-de-inquilinos-morosos-camara-inmobiliaria-peruana-noticia/)). En la región, una aseguradora respalda la garantía; LLAVE tiene balance y aseguradora dentro del mismo grupo.
 
-## MVP en 90 días: una promesa, tres gates
+## Piloto de 30 días: una promesa, tres gates
 
 El MVP debe probar una sola promesa con contratos reales: «recibe tu renta el día 5, pague o no tu inquilino». Propongo de 50 a 100 contratos en Lima Moderna, en tres fases con un gate de continuar o parar al final de cada una.
 
-![Roadmap del MVP de 90 días: tres fases y tres gates de continuar o parar](originals/06-recomendaciones-roadmap-mvp.png)
+![Roadmap del piloto de 30 días: tres fases y tres gates de continuar o parar](originals/06-recomendaciones-roadmap-mvp.png)
 
 El día 0 exige la estructura legal y el tope de pérdida aprobados; sin eso, el MVP no arranca. El gate 1 pide que 10% o más de los contactados deje sus datos ante el precio real, probado al azar a 3% y 5%.
 
@@ -221,12 +223,12 @@ El gate 2 pide 20 contratos firmados antes de escalar a 50-100. El gate 3 no val
 | Métrica | Cómo se mide | Umbral (propuesta) |
 | --- | --- | --- |
 | Interés a precio real (gate 1) | Propietarios contactados que dejan sus datos ante el precio, con 3% y 5% al azar | 10% o más |
-| Contratos firmados (gate 2) | Contratos garantizados con inquilino elegible | 20 al día 45 |
+| Contratos firmados (gate 2) | Contratos garantizados con inquilino elegible | 20 al día 15 |
 | Take rate de Cobro Garantizado (gate 3) | Propietarios con inquilino elegible que lo activan a precio real | 20% o más |
 | Backtest de riesgo (gate 3) | Impago histórico estimado para las bandas media y alta | Aprobado por Riesgos |
 | Consentimiento del inquilino | Postulantes que autorizan su RentScore sobre los que inician | 60% o más |
 | Postulantes nuevos para el banco | No clientes sobre postulantes únicos | 30% o más |
-| NPS de propietarios | Encuesta a los 60 y 90 días | 40 o más |
+| NPS de propietarios | Encuesta a los 20 y 30 días | 40 o más |
 | Costo por contrato garantizado | Gasto de adquisición sobre contratos activos | A fijar con Growth |
 | Impago temprano | Contratos con al menos un mes impago | Solo monitoreo |
 

@@ -1,4 +1,4 @@
-# 012. Cobro Garantizado dentro del MVP de 90 días
+# 012. Cobro Garantizado dentro del MVP (piloto de 30 días, decisión 026)
 
 **Estado:** CERRADA el 25 sept 2026. Precios actualizados el 25 sept 2026. Responsable: equipo. Pendiente: aprobación de Riesgos y revisión de Legal (ver abajo).
 

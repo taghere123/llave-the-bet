@@ -12,7 +12,7 @@ La 016 incluye Renta Adelantada con score alto (15%) y medio (25%). Con score me
 4. Sacar Renta Adelantada del MVP y dejarla para la fase 2.
 
 ## Criterio
-Riesgo regulatorio y reputacional, factibilidad en 90 días y fuerza del argumento ante el jurado.
+Riesgo regulatorio y reputacional, factibilidad en el piloto de 30 días y fuerza del argumento ante el jurado.
 
 ## Propuesta (no vigente hasta cerrarse)
 Opción 2, con la TCEA visible cuando Legal la defina.

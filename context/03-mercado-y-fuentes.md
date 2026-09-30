@@ -18,7 +18,7 @@ Regla del repo: ninguna cifra de "proyectado" se presenta como resultado observa
 | Métrica | Valor | Cómo se calculó |
 | --- | --- | --- |
 | Personas viviendo en alquiler (nacional) | ~4.8 millones | 1,256,520 viviendas x 3.8 |
-| Hogares arrendatarios en Lima Metropolitana hoy | ~650,000-700,000 | 520,202 x (1.035)^8, con la tasa de crecimiento intercensal |
+| Hogares arrendatarios en Lima Metropolitana hoy | ~700,000 | 520,202 x (1.035)^8 a (1.035)^9 = 685-709 mil, con la tasa de crecimiento intercensal. El equipo fijó 700 mil como cifra única el 30 sept 2026 (antes: rango de 650-700 mil) |
 
 ## Datos heredados sin verificar
 

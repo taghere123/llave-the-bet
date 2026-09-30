@@ -1,4 +1,4 @@
-# MVP: piloto de 90 días
+# MVP: piloto de 30 días
 
 Esto es una especificación, no código. Se completa durante y después del taller.
 
@@ -27,14 +27,14 @@ El propietario paga por la garantía de cobro (RentScore + Cobro Garantizado o R
 | Niveles 2 y 3, solo score medio o alto, como préstamo de consumo a tasa cero (012 y 016) | |
 | Inquilinos sin cuenta Interbank: postulan y su score sale de centrales de riesgo (leads de bancarización) | |
 
-**Cambio de alcance (29 sept 2026, decisión 017):** el marketplace propio pasó de "No entra" a "Entra". Esto añade riesgo de factibilidad en 90 días, el mismo que la 001 quería evitar. El equipo lo asume para controlar la adquisición del inquilino y el dato. Falta dimensionar inventario inicial, carga de avisos, tráfico y su costo; ver "Por completar".
+**Cambio de alcance (29 sept 2026, decisión 017):** el marketplace propio pasó de "No entra" a "Entra". Esto añade riesgo de factibilidad en el piloto (hoy de 30 días, decisión 026), el mismo que la 001 quería evitar. El equipo lo asume para controlar la adquisición del inquilino y el dato. Falta dimensionar inventario inicial, carga de avisos, tráfico y su costo; ver "Por completar".
 
 ## Por completar
 
 - Marketplace (decisión 017): inventario inicial, cómo se cargan los avisos, de dónde sale el tráfico de inquilinos y su costo de adquisición. Es el riesgo de factibilidad nuevo del piloto.
 - Segmento y tamaño del piloto: cuántos propietarios y cuántas pólizas.
 - Métricas de éxito y umbrales: conversión a póliza, prima pagada, disposición a pagar, siniestralidad temprana, renovación.
-- Cronograma día 0 a 90.
+- Cronograma día 0 a 30 (decisión 026).
 - Dependencias: Riesgos, Legal, Interseguro suscripción, Growth y Victoria, TI de Interbank.
 - Presupuesto y equipo real. La cifra de US$400-500K viene de una herramienta de IA y no está verificada.
 
