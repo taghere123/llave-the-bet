@@ -11,7 +11,7 @@ La 017 mete al piloto un marketplace propio con el flujo completo del inquilino.
 3. Sin marketplace: solo pasaporte e invitación.
 
 ## Criterio
-Control del momento de postulación y del dato, que motivó la 017, frente al costo de inventario y tráfico en 90 días.
+Control del momento de postulación y del dato, que motivó la 017, frente al costo de inventario y tráfico en el piloto de 30 días.
 
 ## Propuesta (no vigente hasta cerrarse)
 Opción 2. Conserva el control del consentimiento y del dato, y abre los contratos existentes, no solo los nuevos.

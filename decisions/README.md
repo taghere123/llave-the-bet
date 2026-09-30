@@ -7,10 +7,10 @@ Una decisión por archivo. Numeración: 001-009 tomadas, 010 en adelante abierta
 | 001 | No construir marketplace propio | ~~Tomada~~ Reemplazada por 017 | Equipo |
 | 002 | RentScore y Seguro van juntos | Tomada | Equipo |
 | 003 | El inquilino contrata y paga un seguro de hogar (no reemplaza el depósito ni cubre impago) | Tomada | Equipo |
-| 004 | MVP de 90 días con una sola hipótesis | Tomada | Equipo |
+| 004 | MVP con una sola hipótesis (duración original de 90 días) | Tomada. Duración reemplazada por 026 | Equipo |
 | 005 | Box 3 como lente de evaluación | Tomada | Equipo |
 | 010 | Precio del seguro: 2-5% de la renta | Tomada (25 sept 2026). Falta tarificar con Interseguro | Equipo + Interseguro |
-| 011 | Moneda y cifras de ingresos | **Abierta** | William Salinas |
+| 011 | Moneda y cifras: el modelo financiero a 5 años es el caso base, con 700 mil hogares | Tomada (30 sept 2026). Cuatro pendientes del modelo | William Salinas |
 | 012 | Cobro Garantizado con comisión real en el MVP: 3% score alto, 5% medio, no elegible bajo | Tomada (25 sept 2026). Falta aprobación de Riesgos | Equipo |
 | 013 | Portal: propio de Interbank o alianza | **Abierta** | Equipo + Growth y Victoria |
 | 014 | Número de equipo y composición del jurado | **Abierta** | Luis Carlos Jiménez Lara |
@@ -25,5 +25,6 @@ Una decisión por archivo. Numeración: 001-009 tomadas, 010 en adelante abierta
 | 023 | Marketplace liviano, Pasaporte RentScore e invitación al inquilino actual (propuesta; revisa 017) | **Abierta** | Por asignar |
 | 024 | Hipótesis del MVP en dos partes y North Star (propuesta; revisa 004) | **Abierta** | Por asignar |
 | 025 | Estructura de Cobro Garantizado: préstamo a tasa cero o garantía con comisión (propuesta; revisa 016 y 018) | **Abierta** | Por asignar (Legal y Riesgos) |
+| 026 | Piloto de 30 días (reemplaza la duración de 004) | Tomada (30 sept 2026) | Equipo |
 
 Formato de cada archivo: contexto, opciones, criterio, decisión, consecuencias, fecha y responsable.

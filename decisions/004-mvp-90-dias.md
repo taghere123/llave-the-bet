@@ -1,6 +1,8 @@
 # 004. MVP de 90 días con una sola hipótesis
 
-**Estado:** Tomada
+**Estado:** Tomada. La duración de 90 días fue reemplazada el 30 sept 2026 por un piloto de 30 días (decisión 026); la hipótesis no cambia.
+
+> **Nota (30 sept 2026):** donde este archivo dice 90 días, rige la 026. El texto original se mantiene por trazabilidad.
 
 ## Contexto
 El MVP original hablaba de piloto de 0-6 meses. La rúbrica oficial da 30% a factibilidad con "MVP en 90 días con recursos razonables".

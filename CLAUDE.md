@@ -15,13 +15,14 @@ No hay producto ni validación con usuarios. Existe un prototipo navegable con d
 1. Marketplace propio de LLAVE con flujo de inquilino, y entra al piloto (decisión 017, reemplaza a la 001). El inquilino busca, se registra, autoriza su RentScore y postula dentro de LLAVE.
 2. RentScore y Seguro van juntos, por selección adversa.
 3. El inquilino contrata y paga el seguro de hogar (2-5% de la renta, decisión 010). El propietario es el beneficiario. No reemplaza el depósito ni cubre impago.
-4. El MVP cabe en 90 días y prueba una sola hipótesis: el propietario paga por la garantía de cobro (Cobro Garantizado o Renta Adelantada) más de lo que paga hoy por publicar.
+4. El MVP se prueba en un piloto de 30 días (decisión 026) con una sola hipótesis: el propietario paga por la garantía de cobro (Cobro Garantizado o Renta Adelantada) más de lo que paga hoy por publicar.
 5. Box 3 es el lente de evaluación del programa.
 6. Cobro Garantizado se prueba con comisión real en el MVP (decisión 012): 3% de cada renta con score alto, 5% con score medio, no disponible con score bajo. Interbank asume el impago.
 7. El inquilino autoriza que el propietario vea su RentScore al postular (decisión 015). El propietario no lo solicita.
 8. Renta Adelantada entra al MVP (decisión 016): solo contratos de 1 año; comisión de 15% de la renta del año con score alto, 25% con medio, no disponible con score bajo. Cifras de 012 y 016 del equipo, sin sustento actuarial.
 9. En Cobro Garantizado y Renta Adelantada el deudor es el inquilino y el beneficiario es el propietario (decisión 018). Interbank presta al inquilino, paga al propietario, el inquilino devuelve mes a mes; la comisión la absorbe el propietario. Falta Legal, Riesgos y SBS.
 10. El walkthrough (`prototype/app/public/walkthrough/`) es parte de todo entregable (decisión 020). Todo cambio de look and feel o de navegación del prototipo lo actualiza en el mismo cambio.
+11. Caso financiero (decisión 011): el modelo a 5 años de la carpeta «CARPETA - DECK FINAL» es el caso base, con 700 mil hogares arrendatarios en Lima Metropolitana hoy. Es proyección con supuestos del equipo, sin validación actuarial ni de Riesgos, y tiene cuatro pendientes conocidos listados en la 011.
 
 ## Los tres dolores que resuelve LLAVE (marco de negocio re-consensuado, 29 sept 2026)
 
@@ -31,7 +32,6 @@ No hay producto ni validación con usuarios. Existe un prototipo navegable con d
 
 ## Decisiones abiertas (no resolver por tu cuenta, señalarlas)
 
-- 011: moneda y cifras de ingresos.
 - 013: portal propio de Interbank o alianza. Ya no bloquea el flujo del inquilino (hay marketplace propio, 017); sigue abierta como canal adicional de inventario y tráfico.
 - 014: número de equipo y composición del jurado.
 - 021 a 025: propuestas de `context/06-recomendaciones-final.md` (elegibilidad por capacidad de pago, Renta Adelantada solo con score alto, alcance del marketplace, hipótesis y North Star, estructura de Cobro Garantizado). No aplicarlas hasta que el equipo las cierre.

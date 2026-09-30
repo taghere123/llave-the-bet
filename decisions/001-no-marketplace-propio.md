@@ -2,7 +2,7 @@
 
 **Estado:** Reemplazada por la decisión 017 el 29 sept 2026. Se conserva por trazabilidad.
 
-> **Nota (29 sept 2026):** esta decisión ya no está vigente. El equipo decidió construir un marketplace propio de LLAVE con flujo de inquilino, y que entre al piloto de 90 días. Ver `017-marketplace-propio.md`. El contenido original se mantiene abajo sin cambios.
+> **Nota (29 sept 2026):** esta decisión ya no está vigente. El equipo decidió construir un marketplace propio de LLAVE con flujo de inquilino, y que entre al piloto (hoy de 30 días, decisión 026). Ver `017-marketplace-propio.md`. El contenido original se mantiene abajo sin cambios.
 
 ---
 

@@ -1,6 +1,6 @@
 # Contratos del repositorio
 
-Qué garantiza cada carpeta y documento, y cómo se cambia. Complementa las reglas del `README.md`; si algo de aquí contradice una decisión de `decisions/`, manda la decisión. Última actualización: 29 sept 2026.
+Qué garantiza cada carpeta y documento, y cómo se cambia. Complementa las reglas del `README.md`; si algo de aquí contradice una decisión de `decisions/`, manda la decisión. Última actualización: 30 sept 2026.
 
 | Artefacto | Qué contiene | Qué garantiza | Cómo se cambia |
 | --- | --- | --- | --- |
@@ -11,7 +11,7 @@ Qué garantiza cada carpeta y documento, y cómo se cambia. Complementa las regl
 | `prototype/` | Prototipo navegable (`app/`) y legado (`src/`, `data/`) | Solo datos ficticios. Todo valor inventado lleva la etiqueta SUPUESTO y está en `prototype/docs/supuestos.md`. Las integraciones van detrás de providers simulados (decisión 019) y el RentScore no cambia sin Riesgos | PR con `npm run check` en verde; si cambia el look and feel o la navegación, el mismo PR actualiza el walkthrough (decisión 020) |
 | `prototype/app/public/walkthrough/` | Guía navegable con capturas de ambos journeys, para quien no conoce el proyecto | Refleja la navegación y el look and feel vigentes. `walkthrough:verificar` falla si una ruta no está documentada, si falta o sobra una captura o si un enlace interno no tiene destino | `npm run walkthrough:capturas`, textos y fecha de la guía, y `npm run check` en verde, en el mismo PR del cambio visual |
 | `local_deploy/` | Versión compilada para abrir sin servidor ni internet | Es generada: no se edita a mano | `npm run build:local` desde `prototype/app` |
-| `mvp/` | Especificación del piloto de 90 días | Solo se llama «entrevista» a lo documentado en `mvp/validacion/` | PR |
+| `mvp/` | Especificación del piloto de 30 días | Solo se llama «entrevista» a lo documentado en `mvp/validacion/` | PR |
 | `aidlc-docs/` | Documentación del ciclo AI-DLC | `audit.md` registra con fecha cada interacción del ciclo | Lo actualiza el flujo AI-DLC |
 
 ## Reglas transversales
