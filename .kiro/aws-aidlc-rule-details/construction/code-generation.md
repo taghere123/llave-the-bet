@@ -208,10 +208,18 @@ When generating UI code (web, mobile, desktop), ensure elements are automation-f
 - Avoid dynamic or auto-generated IDs that change between renders
 - Keep `data-testid` values stable across code changes (only change when element purpose changes)
 
+### Walkthrough Rule (project rule, LLAVE decision 020)
+The walkthrough at `prototype/app/public/walkthrough/` is part of every deliverable. If a unit changes look and feel or navigation (screens, visible text, styles, components, routes or flow):
+- The unit code generation plan MUST include an explicit step: "Update walkthrough: `npm run walkthrough:capturas`, review texts and date in `public/walkthrough/index.html`".
+- New screens/routes MUST add their capture step to `scripts/walkthrough-capturas.mjs`, an `<article class="paso" data-ruta="...">` to the guide and a row in its quick map.
+- `npm run check` (which runs `walkthrough:verificar`) MUST pass before presenting the completion message.
+- The completion message MUST list the updated walkthrough files. A unit with visual changes and a stale walkthrough is NOT complete.
+
 ## Completion Criteria
 - Complete unit code generation plan created and approved
 - All steps in unit code generation plan marked [x]
 - All unit stories implemented according to plan
 - All code and tests generated (tests will be executed in Build & Test phase)
 - Deployment artifacts generated
+- Walkthrough updated if the unit changed look and feel or navigation (see Walkthrough Rule)
 - Complete unit ready for build and verification

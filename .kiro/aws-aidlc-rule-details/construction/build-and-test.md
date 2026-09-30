@@ -296,6 +296,16 @@ Create `aidlc-docs/construction/build-and-test/build-and-test-summary.md`:
 
 ---
 
+## Step 7b: Verify Walkthrough (project rule, LLAVE decision 020)
+
+The walkthrough at `prototype/app/public/walkthrough/` is part of every deliverable.
+- If any unit in this cycle changed look and feel or navigation, run `npm run walkthrough:capturas` from `prototype/app` and review the guide texts and date.
+- `npm run check` includes `walkthrough:verificar`; Build and Test cannot be reported as Pass while it fails.
+- If the offline build is distributed, run `npm run build:local` so `local_deploy/app/walkthrough/` matches.
+- Add a "Walkthrough" line (updated / not affected, with reason) to `build-and-test-summary.md`.
+
+---
+
 ## Step 8: Update State Tracking
 
 Update `aidlc-docs/aidlc-state.md`:

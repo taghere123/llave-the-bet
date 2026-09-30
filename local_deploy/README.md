@@ -11,6 +11,7 @@ Doble clic en `servir.command`. Levanta la app en http://localhost:8080 con Pyth
 Si macOS bloquea el script la primera vez: clic derecho en `servir.command` → Abrir → Abrir.
 
 ## Notas
+- **Guía de la demo**: `app/walkthrough/index.html` explica cada pantalla con capturas. También se abre desde el pie de la app.
 - **Progreso**: se guarda en el `localStorage` del navegador. Doble clic y servidor guardan por separado (son orígenes distintos). "Reiniciar demo", al pie, vuelve al inicio.
 - **Sin internet**: todo funciona; solo la tipografía Montserrat cambia a Arial.
 - **Actualizar esta carpeta** después de cambiar el código:

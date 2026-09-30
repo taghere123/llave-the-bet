@@ -6,6 +6,8 @@ Objetivo: un prototipo navegable del journey del propietario que sirva para la d
 
 La versión vigente vive en `app/` (Vite + React + TypeScript). Tiene los dos journeys conectados, pruebas automatizadas y los módulos de RentScore, Legal, pagos y datos detrás de providers simulados (decisión 019). Cómo correrla: `app/README.md`. Vercel publica `app/dist`. Documentación del ciclo: `aidlc-docs/` en la raíz del repo.
 
+**Walkthrough** (decisión 020): `app/public/walkthrough/index.html` es la guía paso a paso de ambos journeys, con capturas, para alguien ajeno al proyecto. Se publica con la app (`/walkthrough/`) y se abre desde el pie ("Guía de la demo"). Todo cambio de look and feel o de navegación la actualiza en el mismo cambio; ver `app/README.md`. Las capturas de `docs/capturas/` son del legado y no se mantienen.
+
 `src/` y `data/` quedan como **prototipo legado**. Sirven como referencia de paridad visual y como oráculo de la prueba diferencial del RentScore, así que no hay que borrarlos. El legado solo tiene el journey del propietario: el del inquilino que se describe abajo está implementado en `app/`.
 
 ## Primer mockup (25 sept 2026, legado)

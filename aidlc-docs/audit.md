@@ -215,3 +215,20 @@ Registro completo de interacciones del ciclo AI-DLC para el proyecto LLAVE (The 
 **Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario)
 
 ---
+## Build and Test — Walkthrough navegable (solicitud)
+**Timestamp**: 2026-09-29T20:20:00Z
+**User Input**: "agreguemos un .html ligado al proyecto que sirva como un walkthrough y le sirva a una persona ajena a este proyecto para guiarse en la navegación de ambos flujos (inquilino/propietario).
+
+El html debe contener pantallazos de cada parte del proceso y explicar qué sucede en cada página y qué se supone que debe hacer el usuario.
+
+Asimismo, cada vez que se realicen cambios en el look and feel, actualizar este html debe ser parte del proceso integral de los entregables, por ese motivo, actualizarlo debe ser parte de todos los contratos actuales."
+**AI Response**: "Solicitud registrada como extensión de CONSTRUCTION (igual que el deploy local), a profundidad mínima y sin gates intermedios por la delegación vigente (audit 00:45). Plan: walkthrough en prototype/app/public/walkthrough/ (se publica con la app en Vercel y en local_deploy), capturas generadas con un script Playwright reproducible, verificación de cobertura en npm run check, y la regla de mantenimiento agregada a los contratos (CLAUDE.md, READMEs, requisitos, NFR por unidad, reglas AI-DLC de construcción, steering de Kiro y decisión 020)."
+**Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario)
+
+---
+## Build and Test — Walkthrough navegable (completado)
+**Timestamp**: 2026-09-29T21:30:00Z
+**AI Response**: "Walkthrough en prototype/app/public/walkthrough/ (index.html + walkthrough.css, sin JS ni estilos inline por la CSP) con 24 capturas móviles generadas por npm run walkthrough:capturas (Playwright sobre Chromium local, reloj fijo, recorrido por clics de la historia completa y variantes de score medio/bajo). Link 'Guía de la demo' en el pie de la app (el pie pasa a columna en <480px). npm run check incluye walkthrough:verificar (19 rutas documentadas, 24 capturas; probado en negativo). playwright-core 1.63.0 como devDependency exacta; npm audit 0. Regla de mantenimiento agregada a: decisión 020, CLAUDE.md, README raíz, prototype/README, app/README, local_deploy/README, RNF-12 y criterio de éxito 8, NFR-U1-11 y herencia en U2-U4, build-and-test-summary, reglas AI-DLC code-generation.md y build-and-test.md, steering .kiro/steering/walkthrough.md y aidlc-state.md. Verificado: check 64/64, build y build:local copian la guía, ida y vuelta app-guía en preview HTTP y en file://."
+**Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario, completada)
+
+---

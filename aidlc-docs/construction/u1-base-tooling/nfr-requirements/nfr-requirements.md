@@ -14,5 +14,6 @@ Aplican a todo el proyecto; U2..U4 los heredan.
 | NFR-U1-08 | Responsive | Breakpoint de 720px y contenedor de 896px, como en el legado |
 | NFR-U1-09 | Robustez del estado | Storage no disponible o estado corrupto: la demo arranca del estado inicial sin romperse |
 | NFR-U1-10 | Automatización | Elementos interactivos con `data-testid` estables (`{componente}-{rol}`) |
+| NFR-U1-11 | Walkthrough al día (RNF-12, decisión 020) | Todo cambio de look and feel o de navegación corre `npm run walkthrough:capturas` y ajusta los textos de `public/walkthrough/index.html`. `npm run walkthrough:verificar` (dentro de `npm run check`) pasa. Agregado el 2026-09-29 |
 
 Rendimiento, escalabilidad y disponibilidad: N/A por ser un sitio estático en el CDN de Vercel. Las extensiones Security y Resiliency están desactivadas en este ciclo.
