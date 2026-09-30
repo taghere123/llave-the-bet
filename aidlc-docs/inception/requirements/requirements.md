@@ -64,6 +64,7 @@
 - **RNF-09 (Seguridad de front, no como extensión bloqueante)**: Conservar el escape anti-XSS al renderizar datos; configurar cabeceras de seguridad HTTP básicas vía Vercel cuando sea trivial; usar SRI para recursos de CDN externos cuando aplique.
 - **RNF-10 (Datos ficticios)**: Cero datos reales; todo valor inventado etiquetado SUPUESTO y listado en `prototype/docs/supuestos.md`.
 - **RNF-11 (Paridad funcional)**: La migración/refactor no debe cambiar el comportamiento observable del journey del propietario existente.
+- **RNF-12 (Walkthrough al día, decisión 020)**: Existe una guía HTML con capturas de ambos journeys (`prototype/app/public/walkthrough/`) que explica qué pasa en cada pantalla y qué debe hacer el usuario, pensada para alguien ajeno al proyecto. Todo cambio de look and feel o de navegación la actualiza en el mismo entregable (`npm run walkthrough:capturas` + textos). `npm run check` falla si una ruta no está documentada o si faltan o sobran capturas. Agregado el 2026-09-29, después del cierre de Build and Test.
 
 ## Restricciones y supuestos
 
@@ -80,6 +81,7 @@
 5. Linting/formateo/tipado configurados y sin errores; render basado en componentes/plantillas.
 6. Los módulos simulados están detrás de interfaces explícitas e intercambiables.
 7. Cero datos reales; supuestos etiquetados y documentados.
+8. El walkthrough refleja la versión vigente de la app: cubre todas sus rutas y sus capturas se regeneraron con el último cambio visual (RNF-12).
 
 ## Resumen
 

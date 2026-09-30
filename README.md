@@ -6,9 +6,9 @@ RentScore evalúa al inquilino con datos bancarios reales. Un seguro de hogar pa
 
 **Repo privado. No subir datos reales de clientes, credenciales ni documentos internos confidenciales. Todo dato en `/prototype` es inventado.**
 
-## Estado (25 sept 2026)
+## Estado (29 sept 2026)
 
-Hay propuesta, pero no hay producto. Sin código, sin prototipo, sin validación con usuarios. Próximo hito: **taller AI-DLC, 29-30 sept, Torre Interbank, asistencia obligatoria.**
+Hay propuesta y un prototipo navegable con datos ficticios y dos journeys conectados (`prototype/app`), pero no hay producto ni validación con usuarios. Las recomendaciones para la final están en `context/06-recomendaciones-final.md`, con cinco decisiones abiertas (021 a 025). Próximo hito: **cierre del taller AI-DLC (30 sept) y selección de finalistas (sin fecha).**
 
 ## Cómo navegar
 
@@ -19,16 +19,19 @@ Hay propuesta, pero no hay producto. Sin código, sin prototipo, sin validación
 | `decisions/` | Decisiones tomadas y decisiones abiertas, una por archivo |
 | `prototype/` | Prototipo navegable con datos falsos (taller AI-DLC) |
 | `mvp/` | Especificación del piloto de 90 días |
+| `prototype/app/public/walkthrough/` | Guía navegable con capturas de ambos journeys, para quien no conoce el proyecto. Se abre desde el pie de la app ("Guía de la demo") |
 | `scripts/` | Utilidades, incluido el script para crear los issues iniciales |
 | `CLAUDE.md` | Contexto para herramientas de IA. Se lee automáticamente |
+| `CONTRATOS.md` | Qué garantiza cada carpeta y documento, y cómo se cambia |
 
 ## Lectura para quien se incorpora (30 min)
 
 1. Este README.
 2. `context/02-handoff.md`.
-3. `decisions/` completo, empezando por las abiertas (011, 013, 014).
+3. `decisions/` completo, empezando por las abiertas (011, 013, 014 y 021 a 025).
 4. `context/01-propuesta-big-idea.md`.
 5. `context/04-programa-y-calendario.md`.
+6. `context/06-recomendaciones-final.md`: recomendaciones de UI/UX y negocio para la final, con las preguntas del jurado.
 
 ## Equipo
 
@@ -41,3 +44,4 @@ William Salinas (negocio y narrativa), Carlos Segura (producto digital e IA), Di
 - Si un documento contradice a otro, no se elige uno en silencio: se abre o actualiza una decisión.
 - Cambios por rama y pull request, aunque sean cuatro personas. Deja traza de quién decidió qué.
 - No confiar en cifras o competidores que salgan de una herramienta de IA sin verificar la fuente. Hubo alucinaciones en este proyecto.
+- Todo cambio de look and feel o de navegación del prototipo actualiza el walkthrough en el mismo PR (decisión 020): `npm run walkthrough:capturas`, textos de la guía y `npm run check` en verde.

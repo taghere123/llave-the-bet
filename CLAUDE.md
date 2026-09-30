@@ -8,7 +8,7 @@ Plataforma para propietarios de 1-2 inmuebles en Lima Metropolitana. Niveles: 0 
 
 ## Estado real
 
-No hay producto, ni código, ni validación con usuarios. No describir nada como implementado o probado. Toda cifra de negocio es proyección preliminar.
+No hay producto ni validación con usuarios. Existe un prototipo navegable con datos ficticios (`prototype/app`); no describirlo como producto implementado ni probado con usuarios. Toda cifra de negocio es proyección preliminar.
 
 ## Decisiones vigentes (no revertir sin abrir una decisión en `decisions/`)
 
@@ -21,6 +21,7 @@ No hay producto, ni código, ni validación con usuarios. No describir nada como
 7. El inquilino autoriza que el propietario vea su RentScore al postular (decisión 015). El propietario no lo solicita.
 8. Renta Adelantada entra al MVP (decisión 016): solo contratos de 1 año; comisión de 15% de la renta del año con score alto, 25% con medio, no disponible con score bajo. Cifras de 012 y 016 del equipo, sin sustento actuarial.
 9. En Cobro Garantizado y Renta Adelantada el deudor es el inquilino y el beneficiario es el propietario (decisión 018). Interbank presta al inquilino, paga al propietario, el inquilino devuelve mes a mes; la comisión la absorbe el propietario. Falta Legal, Riesgos y SBS.
+10. El walkthrough (`prototype/app/public/walkthrough/`) es parte de todo entregable (decisión 020). Todo cambio de look and feel o de navegación del prototipo lo actualiza en el mismo cambio.
 
 ## Los tres dolores que resuelve LLAVE (marco de negocio re-consensuado, 29 sept 2026)
 
@@ -33,6 +34,7 @@ No hay producto, ni código, ni validación con usuarios. No describir nada como
 - 011: moneda y cifras de ingresos.
 - 013: portal propio de Interbank o alianza. Ya no bloquea el flujo del inquilino (hay marketplace propio, 017); sigue abierta como canal adicional de inventario y tráfico.
 - 014: número de equipo y composición del jurado.
+- 021 a 025: propuestas de `context/06-recomendaciones-final.md` (elegibilidad por capacidad de pago, Renta Adelantada solo con score alto, alcance del marketplace, hipótesis y North Star, estructura de Cobro Garantizado). No aplicarlas hasta que el equipo las cierre.
 
 Pendientes de las decisiones tomadas: tarificar el seguro con Interseguro (010), aprobación de Riesgos y revisión de Legal y SBS de los niveles 2 y 3 como crédito de consumo, incluida la transparencia de la tasa implícita (012 y 016), texto legal de la autorización (015).
 
@@ -43,6 +45,8 @@ Pendientes de las decisiones tomadas: tarificar el seguro con Interseguro (010),
 - El prototipo usa solo datos ficticios y ninguna API real. RentScore en el prototipo es una función de reglas sobre datos inventados.
 - No incluir datos personales reales, correos, credenciales ni información interna confidencial en ningún archivo.
 - Ante una contradicción entre documentos, señalarla y proponer opciones; no elegir en silencio.
+- Si cambias pantallas, textos visibles, estilos, componentes, rutas o el flujo del prototipo: desde `prototype/app` corre `npm run walkthrough:capturas`, ajusta los textos de `public/walkthrough/index.html` y su fecha, y verifica con `npm run check` (incluye `walkthrough:verificar`). Sin eso el cambio no está terminado.
+- No escribir que la renta garantizada «no existe en Latinoamérica»: es falso. Usar «en el Perú no encontramos garantía de renta», con las fuentes de `context/03-mercado-y-fuentes.md`.
 
 ## Hito inmediato
 
@@ -52,4 +56,4 @@ Taller AI-DLC, 29-30 sept 2026. Entregable: prototipo navegable de dos journeys 
 
 ## Dónde mirar
 
-`context/` para el contexto, `decisions/` para lo decidido, `prototype/README.md` y `mvp/README.md` para el alcance.
+`context/` para el contexto, `decisions/` para lo decidido, `prototype/README.md` y `mvp/README.md` para el alcance, `prototype/app/public/walkthrough/index.html` para la guía navegable de ambos journeys, `context/06-recomendaciones-final.md` para las recomendaciones de la final y `CONTRATOS.md` para lo que garantiza cada carpeta.

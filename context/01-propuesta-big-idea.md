@@ -4,6 +4,8 @@ Fuente: `originals/LLAVE_BigIdea_RentaGarantizada.docx` (Taller 2, 14 sept 2026)
 
 > Actualizado el 25 sept 2026 con correcciones del equipo. El docx original no se modificó y en esos puntos ya no coincide. Cambios: (1) el seguro es de hogar y protege de daños; no reemplaza el depósito ni cubre impago (`decisions/003`); (2) prima de 2-5% de la renta (`decisions/010`); (3) Cobro Garantizado cubre el impago, con comisión de 3% (score alto) o 5% (medio) y solo para score medio o alto (`decisions/012`); (4) el inquilino autoriza al postular (`decisions/015`); (5) Renta Adelantada entra al MVP, solo contratos de 1 año, con comisión de 15% (alto) o 25% (medio), y los niveles 2 y 3 son un préstamo de consumo a tasa cero, no factoring (`decisions/016`).
 
+> Actualizado el 29 sept 2026: la sección «Precedente global» corrige la afirmación sobre Latinoamérica (ver `03-mercado-y-fuentes.md`). El texto original se conserva por trazabilidad.
+
 ## Descripción corta
 
 Plataforma que evalúa al inquilino con datos bancarios reales y lo vincula a un seguro de hogar mensual que protege el inmueble de daños. Además, el propietario puede elegir que Interbank le pague la renta cada mes de forma garantizada (Interbank asume el impago), o incluso le adelante la renta de un contrato de un año.
@@ -62,6 +64,8 @@ El propietario limeño decide por intuición y con papeles falseables, sin prote
 - TheGuarantors (EE.UU.): cobertura de renta con IA para calificar inquilinos.
 
 No se encontró un jugador equivalente en Perú ni en Latinoamérica. Esa búsqueda no fue exhaustiva.
+
+> **Corrección del 29 sept 2026:** la afirmación sobre Latinoamérica es falsa. QuintoAndar (Brasil), Houm (Chile), Homie (México) y el seguro de arrendamiento en Colombia ya garantizan rentas o cubren el impago. En el Perú no se encontró un jugador equivalente. Fuentes en `03-mercado-y-fuentes.md`.
 
 ## Riesgos y regulación (niveles 2 y 3)
 

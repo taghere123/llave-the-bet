@@ -9,5 +9,5 @@ dist/
 
 # Salida del build de Vercel
 public/
-# Estáticos de Vite (incluye _headers y _redirects de Cloudflare Pages)
-!prototype/app/public/
+# Excepción: archivos estáticos de la app (walkthrough y sus capturas), sí se versionan
+!/prototype/app/public/

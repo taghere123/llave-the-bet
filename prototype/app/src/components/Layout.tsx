@@ -93,6 +93,10 @@ export function Pie({ onReiniciar }: { onReiniciar: () => void }) {
     <footer className="pie">
       <span>LLAVE · Prototipo del Equipo 22</span>
       <span className="pie-acc">
+        {/* Walkthrough estático (public/walkthrough/): guía con capturas para quien no conoce el proyecto. */}
+        <a className="lk" href="walkthrough/index.html" data-testid="footer-guia-link">
+          Guía de la demo
+        </a>
         <a className="lk" href={href('demo')} data-testid="footer-demo-link">
           Panel de demo
         </a>

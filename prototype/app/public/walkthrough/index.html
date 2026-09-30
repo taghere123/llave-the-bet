@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>LLAVE · Guía de la demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="walkthrough.css" />
+  </head>
+  <body>
+    <!--
+      MANTENIMIENTO (decisión 020): esta guía es parte del entregable. Todo cambio de look and feel
+      o de navegación del prototipo actualiza, en el mismo cambio:
+        1. las capturas: npm run walkthrough:capturas (desde prototype/app)
+        2. los textos de esta página si cambió lo que se ve o lo que hace el usuario
+        3. la fecha de "Última actualización"
+      npm run check ejecuta walkthrough:verificar: falla si una ruta de la app no está documentada
+      aquí (atributo data-ruta), si falta una captura o si sobra una.
+    -->
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="portada">
+      <div class="contenedor">
+        <div class="marca">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M10 0H32V22A10 10 0 0 1 22 32H0V10A10 10 0 0 1 10 0Z" fill="#05be50" />
+            <circle cx="12" cy="16" r="5" fill="none" stroke="#0f191e" stroke-width="2.5" />
+            <path
+              d="M17 16h9M22 16v4M25 16v3"
+              fill="none"
+              stroke="#0f191e"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          LLAVE
+        </div>
+        <h1>Guía de la demo: <b>propietaria</b> e <b>inquilino</b>, paso a paso</h1>
+        <p>
+          Esta guía explica, pantalla por pantalla, qué muestra el prototipo navegable de LLAVE y
+          qué se espera que hagas en cada paso. Está pensada para alguien que no conoce el proyecto.
+        </p>
+        <p class="meta">
+          Prototipo del Equipo 22 (The Bet). Todos los datos son ficticios y no hay conexión con
+          sistemas de Interbank ni de Interseguro. No es un producto ni está validado con usuarios.
+          Última actualización: 29 sept 2026.
+        </p>
+        <a class="btn" href="../index.html#/inicio">Abrir el prototipo</a>
+        <a class="btn sec" href="#recorrido">Ver el recorrido recomendado</a>
+      </div>
+    </header>
+
+    <main id="contenido" class="contenedor">
+      <nav class="indice" aria-labelledby="indice-titulo">
+        <h2 id="indice-titulo">Contenido</h2>
+        <ol>
+          <li><a href="#antes">Antes de empezar</a></li>
+          <li><a href="#recorrido">Recorrido recomendado</a></li>
+          <li><a href="#parte-1">Parte 1 · La propietaria publica</a></li>
+          <li><a href="#parte-2">Parte 2 · El inquilino postula</a></li>
+          <li><a href="#parte-3">Parte 3 · La propietaria evalúa y elige cómo cobrar</a></li>
+          <li><a href="#parte-4">Parte 4 · El inquilino ve el resultado</a></li>
+          <li><a href="#parte-5">Parte 5 · Variantes y herramientas de demo</a></li>
+          <li><a href="#mapa">Mapa rápido de pantallas</a></li>
+          <li><a href="#mantener">Cómo se mantiene esta guía</a></li>
+        </ol>
+      </nav>
+
+      <section id="antes" aria-labelledby="antes-titulo">
+        <span class="eye">Contexto</span>
+        <h2 id="antes-titulo">Antes de empezar</h2>
+        <p>
+          LLAVE es una propuesta para propietarios de 1 o 2 inmuebles en Lima Metropolitana.
+          Resuelve tres dolores: saber a quién le alquilo (RentScore, un puntaje del inquilino de 0
+          a 100), que no me destruyan la casa (un seguro de hogar que paga el inquilino) y que me
+          paguen puntual (Cobro Garantizado o Renta Adelantada, que ofrece Interbank).
+        </p>
+
+        <h3>Los personajes</h3>
+        <div class="grilla">
+          <div class="tarjeta">
+            <span class="chip prop">Propietaria</span>
+            <h3>Carmen, 52</h3>
+            <p>Alquila un departamento en Surquillo. Es la protagonista de la demo.</p>
+          </div>
+          <div class="tarjeta">
+            <span class="chip inq">Inquilino</span>
+            <h3>Lucía Paredes</h3>
+            <p>
+              Busca dónde vivir y postula desde el marketplace. No es clienta de Interbank. Su score
+              sale alto.
+            </p>
+          </div>
+          <div class="tarjeta">
+            <span class="chip medio">Score medio</span>
+            <h3>Jorge</h3>
+            <p>Postulante precargado en la bandeja de Carmen. Diseñador independiente.</p>
+          </div>
+          <div class="tarjeta">
+            <span class="chip bajo">Score bajo</span>
+            <h3>Kevin</h3>
+            <p>
+              Postulante precargado. Con su score no se ofrecen Cobro Garantizado ni Renta
+              Adelantada.
+            </p>
+          </div>
+        </div>
+
+        <h3>Cómo moverte por el prototipo</h3>
+        <ul>
+          <li>
+            <b>Dos journeys en una sola app.</b> La cabecera blanca es la vista de la propietaria;
+            la cabecera azul oscuro es la vista del inquilino. El link de la cabecera (<b
+              >Ver como inquilino</b
+            >
+            / <b>Ver como propietaria</b>) cambia de una a otra sin perder lo que hiciste.
+          </li>
+          <li>
+            <b>Barra de progreso.</b> Debajo de la cabecera verás el nombre de la pantalla y “Paso X
+            de 9” (propietaria) o “Paso X de 7” (inquilino).
+          </li>
+          <li>
+            <b>Etiqueta <span class="sup">SUPUESTO</span>.</b> Marca cifras y textos inventados por
+            el equipo (comisiones, primas, textos legales). No tienen sustento actuarial ni legal
+            todavía.
+          </li>
+          <li>
+            <b>Pie de página.</b> <b>Guía de la demo</b> abre esta página, <b>Panel de demo</b> abre
+            las herramientas para el jurado y <b>Reiniciar demo</b> borra todo y vuelve al inicio.
+          </li>
+          <li>
+            <b>Tu avance se guarda en el navegador.</b> Si cierras la pestaña y vuelves, sigues
+            donde te quedaste. Para empezar de cero, usa <b>Reiniciar demo</b>.
+          </li>
+          <li>
+            <b>Pensado para celular.</b> Las capturas de esta guía son de un celular (390 px de
+            ancho). En pantallas grandes el contenido se reparte en 2 o 3 columnas.
+          </li>
+        </ul>
+
+        <div class="nota">
+          <b>Cómo abrir el prototipo.</b> En la versión publicada, usa el botón “Abrir el prototipo”
+          de arriba. Sin internet, abre <code>local_deploy/app/index.html</code> con doble clic.
+          Para desarrollo: <code>cd prototype/app</code> y <code>npm run dev</code>.
+        </div>
+      </section>
+
+      <section id="recorrido" aria-labelledby="recorrido-titulo">
+        <span class="eye">En 10 minutos</span>
+        <h2 id="recorrido-titulo">Recorrido recomendado</h2>
+        <p>
+          Los dos journeys están conectados: lo que hace el inquilino aparece en la bandeja de la
+          propietaria, y lo que decide la propietaria le llega al inquilino. Por eso la guía los
+          cuenta como una sola historia, en este orden:
+        </p>
+        <ol>
+          <li><b>Carmen publica</b> su departamento y ve que ya tiene 2 postulantes.</li>
+          <li>
+            <b>Lucía busca</b> en el marketplace, se registra, autoriza su RentScore y postula al
+            departamento de Carmen.
+          </li>
+          <li>
+            <b>Carmen ve a Lucía</b> en su bandeja, revisa su RentScore, la acepta y elige Cobro
+            Garantizado.
+          </li>
+          <li>
+            <b>Lucía ve que la aceptaron</b> y qué significa para ella (figura como deudora de un
+            préstamo de consumo).
+          </li>
+        </ol>
+        <p>
+          Si solo tienes 3 minutos, usa el atajo del <a href="#paso-21">Panel de demo</a>: precarga
+          la postulación de Lucía y salta directo a la bandeja de Carmen.
+        </p>
+      </section>
+
+      <!-- ===================== PARTE 1 ===================== -->
+      <section id="parte-1" aria-labelledby="parte-1-titulo">
+        <span class="eye">Propietaria · pasos 1 a 3 de 9</span>
+        <h2 id="parte-1-titulo">Parte 1 · La propietaria publica</h2>
+
+        <article class="paso" id="paso-01" data-ruta="inicio">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 1, desplazable">
+              <img
+                src="capturas/01-propietaria-inicio.png"
+                width="780"
+                alt="Pantalla de inicio de Carmen: saludo, título Alquila sabiendo a quién y con la seguridad de cobrar, botón Publicar inmueble y los 4 pasos de Cómo funciona."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/01-propietaria-inicio.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>1. Inicio</h3>
+            <p class="ruta">Ruta: <code>#/inicio</code> · Paso 1 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                La bienvenida de Carmen, la promesa de LLAVE y un resumen de cómo funciona en 4
+                pasos: publicar, ver el RentScore, que el inquilino asegure el inmueble y cobrar
+                garantizado o por adelantado.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Toca <b>Publicar inmueble</b>.</p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                Vas al formulario de publicación. Si ya publicaste, el botón dice
+                <b>Ver mi inmueble</b>.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/inicio">Abrir esta pantalla en el prototipo</a>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-02" data-ruta="publicar">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 2, desplazable">
+              <img
+                src="capturas/02-propietaria-publicar.png"
+                width="780"
+                alt="Formulario Publica tu inmueble con tipo, dirección, distrito, renta, dormitorios y área ya llenos con el departamento de Carmen."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/02-propietaria-publicar.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>2. Publicar inmueble</h3>
+            <p class="ruta">Ruta: <code>#/publicar</code> · Paso 2 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Un formulario con el departamento de Carmen ya cargado: Jr. Dante 540, dpto. 302,
+                Surquillo, S/1,800 al mes, 2 dormitorios, 70 m². Simula publicar en el portal que la
+                propietaria ya usa.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Revisa los datos (puedes cambiarlos) y toca <b>Publicar inmueble</b>. Para que las
+                cifras coincidan con esta guía, deja la renta en S/1,800.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>El inmueble queda publicado y pasas a “Mi inmueble”.</p>
+            </div>
+            <a class="abrir" href="../index.html#/publicar">Abrir esta pantalla en el prototipo</a>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-03" data-ruta="inmueble">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 3, desplazable">
+              <img
+                src="capturas/03-propietaria-inmueble.png"
+                width="780"
+                alt="Pantalla Mi inmueble con la insignia Publicado, el título Ya tienes 2 postulantes y la tarjeta del departamento."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/03-propietaria-inmueble.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>3. Mi inmueble</h3>
+            <p class="ruta">Ruta: <code>#/inmueble</code> · Paso 3 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Confirmación de que el inmueble está publicado y cuántos postulantes tiene (2 al
+                inicio: Jorge y Kevin). Todos autorizaron que Carmen vea su RentScore al postular.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Para seguir la historia completa, cambia ahora a la vista del inquilino con
+                <b>Ver como inquilino</b> (arriba a la derecha). Si prefieres ver ya a los
+                postulantes, toca <b>Ver postulantes</b>.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>Cuando Lucía postule (parte 2), este contador sube a 3.</p>
+            </div>
+            <a class="abrir" href="../index.html#/inmueble">Abrir esta pantalla en el prototipo</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===================== PARTE 2 ===================== -->
+      <section id="parte-2" aria-labelledby="parte-2-titulo">
+        <span class="eye">Inquilino · pasos 1 a 7 de 7</span>
+        <h2 id="parte-2-titulo">Parte 2 · El inquilino postula</h2>
+        <p>
+          Ahora eres Lucía. La cabecera se vuelve azul oscuro y dice “Visitante” hasta que te
+          registres.
+        </p>
+
+        <article class="paso" id="paso-04" data-ruta="marketplace">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 4, desplazable">
+              <img
+                src="capturas/04-inquilino-marketplace.png"
+                width="780"
+                alt="Marketplace de LLAVE: título Encuentra dónde vivir en Lima Moderna, filtros de distrito y renta, y la lista de 9 propiedades."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/04-inquilino-marketplace.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>4. Marketplace</h3>
+            <p class="ruta">Ruta: <code>#/marketplace</code> · Paso 1 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                9 propiedades ficticias en Lima Moderna, con filtros por distrito y por renta
+                mensual. Se puede mirar sin registrarse.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Prueba los filtros si quieres (<b>Limpiar filtros</b> los quita) y toca la tarjeta
+                de <b>Jr. Dante 540, dpto. 302</b> en Surquillo: es el departamento de Carmen.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                Se abre la ficha de la propiedad. Cuando ya estés registrada, aquí aparecen los
+                links <b>Mis postulaciones</b> y <b>Mi RentScore</b>.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/marketplace"
+              >Abrir esta pantalla en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-05" data-ruta="propiedad">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 5, desplazable">
+              <img
+                src="capturas/05-inquilino-propiedad.png"
+                width="780"
+                alt="Ficha del departamento de Surquillo con descripción, dormitorios, área, renta de S/1,800, rango del seguro de hogar de S/36 a S/90 al mes y botón Postular."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/05-inquilino-propiedad.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>5. Ficha de la propiedad</h3>
+            <p class="ruta">Ruta: <code>#/propiedad/surquillo-01</code> · Paso 2 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Los datos del inmueble y, en “Si te aceptan”, cuánto pagaría el inquilino por el
+                seguro de hogar: entre 2% y 5% de la renta (S/36 a S/90 al mes aquí). Ese seguro
+                protege el inmueble de daños; no reemplaza el depósito ni cubre el impago.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Toca <b>Postular</b>. <b>Volver a las propiedades</b> te regresa al marketplace.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                La primera vez te pide registrarte. Si ya te registraste y autorizaste tu score, vas
+                directo a postular.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/propiedad/surquillo-01"
+              >Abrir esta pantalla en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-06" data-ruta="registro">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 6, desplazable">
+              <img
+                src="capturas/06-inquilino-registro.png"
+                width="780"
+                alt="Formulario Identifícate para postular con nombre, apellido, DNI, celular y email de Lucía, y el botón Enviar código."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/06-inquilino-registro.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>6. Registro (datos)</h3>
+            <p class="ruta">Ruta: <code>#/registro</code> · Paso 3 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Un formulario corto, sin contraseña: nombre, apellido, DNI, celular y email. Se pide
+                una sola vez.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Llena los datos y toca <b>Enviar código</b>. Para la demo usa los de Lucía:</p>
+              <ul>
+                <li>Nombre <code>Lucía</code>, apellido <code>Paredes</code></li>
+                <li>DNI <code>45872913</code> (8 dígitos)</li>
+                <li>Celular <code>987654321</code> (9 dígitos, empieza con 9)</li>
+                <li>Email <code>lucia.paredes@example.com</code></li>
+              </ul>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                Si algo está mal, el mensaje de error dice cómo corregirlo y el cursor va al campo.
+                Si todo está bien, te pide el código de verificación.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-07" data-ruta="registro">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 7, desplazable">
+              <img
+                src="capturas/07-inquilino-codigo.png"
+                width="780"
+                alt="Pantalla Ingresa el código con el campo Código de verificación lleno con 123456 y el botón Verificar."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/07-inquilino-codigo.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>7. Registro (código de verificación)</h3>
+            <p class="ruta">Ruta: <code>#/registro</code> · segunda parte del paso 3</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                El pedido de un código de 6 dígitos “enviado” al celular. Es simulado: no se envía
+                ningún SMS.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Escribe <code>123456</code> (sirve cualquier número de 6 dígitos) y toca
+                <b>Verificar</b>. <b>Corregir mis datos</b> vuelve al formulario.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>Quedas registrada y pasas a autorizar tu RentScore.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-08" data-ruta="autorizar">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 8, desplazable">
+              <img
+                src="capturas/08-inquilino-autorizar.png"
+                width="780"
+                alt="Pantalla Conoce tu RentScore gratis: qué ve y qué no ve el propietario, texto de autorización, casilla marcada y botón Calcular mi RentScore."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/08-inquilino-autorizar.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>8. Autorizar el RentScore</h3>
+            <p class="ruta">Ruta: <code>#/autorizar</code> · Paso 4 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Qué verá el propietario (el score y la capacidad de pago) y qué no (movimientos,
+                saldos ni deudas). Como Lucía no es clienta de Interbank, su score se calcula con
+                centrales de riesgo. El texto legal es un <span class="sup">SUPUESTO</span>.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Marca <b>Autorizo a Interbank a calcular mi RentScore.</b> y toca
+                <b>Calcular mi RentScore</b>. El botón está desactivado hasta que marques la
+                casilla.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>Ves tu RentScore. Esta autorización es la primera de dos.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-09" data-ruta="mi-score">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 9, desplazable">
+              <img
+                src="capturas/09-inquilino-mi-score.png"
+                width="780"
+                alt="Pantalla Tu RentScore es 87, score alto, cuota segura de S/1,850, fuente centrales de riesgo, factores del score, consejos para mejorarlo y botón Continuar con mi postulación."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/09-inquilino-mi-score.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>9. Mi RentScore</h3>
+            <p class="ruta">Ruta: <code>#/mi-score</code> · Paso 5 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                El score de Lucía para esta propiedad (87 de 100,
+                <span class="chip alto">score alto</span>), su cuota segura (S/1,850 al mes), por
+                qué obtuvo ese puntaje y cómo mejorarlo. El score cambia según la renta de cada
+                propiedad.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Toca <b>Continuar con mi postulación</b>. Con cualquier banda se puede postular; no
+                hay bloqueo.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>Vas a la confirmación de la postulación.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-10" data-ruta="postular">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 10, desplazable">
+              <img
+                src="capturas/10-inquilino-postular.png"
+                width="780"
+                alt="Pantalla Postula a Jr. Dante 540 con el RentScore para esta propiedad, la casilla Autorizo compartir mi RentScore con Carmen marcada y el botón Enviar postulación."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/10-inquilino-postular.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>10. Postular</h3>
+            <p class="ruta">Ruta: <code>#/postular/surquillo-01</code> · Paso 6 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                El resumen de la postulación con el score para esta propiedad y la segunda
+                autorización: compartir el RentScore con este propietario. Sin ella no se puede
+                postular (decisión 015: el inquilino autoriza, el propietario no lo pide).
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Marca <b>Autorizo compartir mi RentScore con Carmen.</b> y toca
+                <b>Enviar postulación</b>.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>La postulación queda enviada y llega a la bandeja de Carmen.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-11" data-ruta="mis-postulaciones">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 11, desplazable">
+              <img
+                src="capturas/11-inquilino-postulacion-enviada.png"
+                width="780"
+                alt="Pantalla Mis postulaciones con la postulación a Jr. Dante 540 en estado Enviada, links para retirarla o dejar de compartir el RentScore y una caja Control de demo."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/11-inquilino-postulacion-enviada.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>11. Mis postulaciones</h3>
+            <p class="ruta">Ruta: <code>#/mis-postulaciones</code> · Paso 7 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Cada postulación con su estado: Enviada, Vista por el propietario, Aceptada, No
+                seleccionada o Retirada.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <ul>
+                <li>
+                  Para seguir la historia, cambia a <b>Ver como propietaria</b> (arriba a la
+                  derecha).
+                </li>
+                <li>
+                  <b>Retirar postulación</b> la quita de la bandeja de Carmen.
+                  <b>Dejar de compartir mi RentScore</b> hace que Carmen deje de ver el score.
+                </li>
+                <li>
+                  <span class="chip demo">Control de demo</span> Los botones <b>Simular: la vio</b>,
+                  <b>Simular: aceptada</b> y <b>Simular: no seleccionada</b> imitan la respuesta del
+                  propietario sin cambiar de vista. No existirían en el producto.
+                </li>
+              </ul>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                <b>Seguir viendo propiedades</b> vuelve al marketplace; puedes postular a otras sin
+                repetir el registro ni la evaluación.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===================== PARTE 3 ===================== -->
+      <section id="parte-3" aria-labelledby="parte-3-titulo">
+        <span class="eye">Propietaria · pasos 4 a 9 de 9</span>
+        <h2 id="parte-3-titulo">Parte 3 · La propietaria evalúa y elige cómo cobrar</h2>
+        <p>
+          De vuelta como Carmen: en Inicio toca <b>Ver mi inmueble</b> y luego
+          <b>Ver postulantes</b>.
+        </p>
+
+        <article class="paso" id="paso-12" data-ruta="postulantes">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 12, desplazable">
+              <img
+                src="capturas/12-propietaria-postulantes.png"
+                width="780"
+                alt="Bandeja de postulantes con Jorge score medio 56, Kevin score bajo 26 y Lucía score alto 87 con la insignia Nuevo, más una caja Control de demo."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/12-propietaria-postulantes.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>12. Postulantes</h3>
+            <p class="ruta">Ruta: <code>#/postulantes</code> · Paso 4 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Los postulantes con su score y su banda: Jorge (56,
+                <span class="chip medio">medio</span>), Kevin (26,
+                <span class="chip bajo">bajo</span>) y Lucía (87,
+                <span class="chip alto">alto</span>) con la insignia <b>Nuevo</b> porque acaba de
+                postular desde el marketplace.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Toca la tarjeta de <b>Lucía</b>.</p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                Se abre su detalle y la insignia “Nuevo” desaparece: del lado de Lucía, la
+                postulación pasa a “Vista por el propietario”.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/postulantes"
+              >Abrir esta pantalla en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-13" data-ruta="postulante">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 13, desplazable">
+              <img
+                src="capturas/13-propietaria-postulante.png"
+                width="780"
+                alt="Detalle de Lucía Paredes: postuló desde el marketplace, identidad verificada, no es clienta de Interbank, tarjeta RentScore verificado con 87 y botones Ver RentScore y Ver su autorización."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/13-propietaria-postulante.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>13. Detalle del postulante</h3>
+            <p class="ruta">Ruta: <code>#/postulante/:id</code> · Paso 5 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Quién es Lucía, cómo postuló (DNI y celular verificados, no es clienta de Interbank)
+                y un adelanto de su RentScore. Carmen no ve movimientos ni saldos, y ver el score es
+                gratis para ella.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Toca <b>Ver su autorización</b> para ver qué aceptó Lucía, o directamente
+                <b>Ver RentScore</b>.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                Si Lucía dejó de compartir su score, aquí aparece un aviso y Carmen ya no puede
+                verlo.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/postulante/jorge"
+              >Abrir el detalle de Jorge en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-14" data-ruta="consentimiento">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 14, desplazable">
+              <img
+                src="capturas/14-propietaria-autorizacion.png"
+                width="780"
+                alt="Vista de solo lectura de cómo postuló Lucía desde su celular, con la casilla de autorización marcada y deshabilitada y el botón Volver."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/14-propietaria-autorizacion.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>14. Autorización del postulante</h3>
+            <p class="ruta">Ruta: <code>#/consentimiento/:id</code> · fuera de la secuencia</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                La pantalla tal como la vio Lucía al postular, con la autorización ya marcada. Es de
+                solo lectura: sirve para que Carmen sepa qué aceptó el postulante. La cabecera
+                oscura indica que es la vista del postulante.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Toca <b>Volver</b> y luego <b>Ver RentScore</b>.</p>
+            </div>
+            <a class="abrir" href="../index.html#/consentimiento/jorge"
+              >Abrir la autorización de Jorge en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-15" data-ruta="resultado">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 15, desplazable">
+              <img
+                src="capturas/15-propietaria-rentscore.png"
+                width="780"
+                alt="RentScore de Lucía Paredes: 87 de 100, score alto, capacidad de pago S/1,850, renta S/1,800, factores del score, comparación con el mercado y botones Aceptar a Lucía y Ver otros postulantes."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/15-propietaria-rentscore.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>15. RentScore del postulante</h3>
+            <p class="ruta">Ruta: <code>#/resultado/:id</code> · Paso 6 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                El score (0 a 100) y su banda, la capacidad de pago frente a la renta, los factores
+                que explican el puntaje y si la renta está dentro del rango de mercado para el
+                distrito. Las bandas son provisionales.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Toca <b>Aceptar a Lucía</b>. <b>Ver otros postulantes</b> vuelve a la bandeja.</p>
+            </div>
+            <div class="bloque">
+              <h4>Qué pasa después</h4>
+              <p>
+                Lucía queda aceptada y ves la póliza del seguro. Si Carmen acepta a otro postulante,
+                la postulación de Lucía pasa a “No seleccionada”. Mira cómo cambia esta pantalla con
+                score medio o bajo en la
+                <a href="#paso-22">parte 5</a>.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-16" data-ruta="poliza">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 16, desplazable">
+              <img
+                src="capturas/16-propietaria-poliza.png"
+                width="780"
+                alt="Pantalla Tu inmueble queda protegido con RentScore Seguro: emisión simulada, póliza con Carmen como beneficiaria, prima que paga Lucía, costo para Carmen S/0, coberturas y botón Elegir cómo cobrar."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/16-propietaria-poliza.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>16. Póliza de RentScore Seguro</h3>
+            <p class="ruta">Ruta: <code>#/poliza/:id</code> · Paso 7 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                La póliza simulada del seguro de hogar de Interseguro: Carmen es la beneficiaria,
+                Lucía lo contrata y paga (2% de la renta con score alto, S/36 al mes
+                <span class="sup">SUPUESTO</span>) y a Carmen no le cuesta nada. Protege el inmueble
+                de daños; no cubre impago.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Toca <b>Elegir cómo cobrar</b>.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-17" data-ruta="cobro">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 17, desplazable">
+              <img
+                src="capturas/17-propietaria-cobro.png"
+                width="780"
+                alt="Pantalla ¿Cómo quieres recibir tu renta? con tres opciones: Cobro estándar S/0, Cobro Garantizado S/54 al mes seleccionado y Renta Adelantada S/3,240 una vez; botón Activar Cobro Garantizado."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/17-propietaria-cobro.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>17. Cómo cobrar</h3>
+            <p class="ruta">Ruta: <code>#/cobro</code> · Paso 8 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Tres formas de recibir la renta. Esta es la decisión que mide el piloto: si la
+                propietaria paga por tener el cobro garantizado. No hay opción preseleccionada.
+              </p>
+              <ul>
+                <li>
+                  <b>Cobro estándar:</b> el inquilino paga cada mes; el riesgo de impago es de
+                  Carmen. Sin comisión.
+                </li>
+                <li>
+                  <b>Cobro Garantizado:</b> Interbank paga S/1,746 el día 5 de cada mes, pague o no
+                  el inquilino. Comisión de 3% con score alto (5% con medio): S/54 al mes.
+                </li>
+                <li>
+                  <b>Renta Adelantada:</b> Carmen recibe hoy S/18,360 por el año de contrato.
+                  Comisión de 15% con score alto (25% con medio): S/3,240 una vez.
+                </li>
+              </ul>
+              <p>
+                Las comisiones son cifras del equipo sin sustento actuarial
+                <span class="sup">SUPUESTO</span> (decisiones 012 y 016).
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Elige <b>Cobro Garantizado</b> y toca <b>Activar Cobro Garantizado</b>. El texto del
+                botón cambia según la opción elegida.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/cobro">Abrir esta pantalla en el prototipo</a>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-18" data-ruta="confirmacion">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 18, desplazable">
+              <img
+                src="capturas/18-propietaria-confirmacion.png"
+                width="780"
+                alt="Confirmación: Recibirás S/1,746 cada mes, pase lo que pase, solicitud registrada simulada, resumen con inquilino, seguro, cobro y lo que paga Carmen, y botón Volver al inicio."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/18-propietaria-confirmacion.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip prop">Propietaria</span>
+            <h3>18. Listo</h3>
+            <p class="ruta">Ruta: <code>#/confirmacion</code> · Paso 9 de 9</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                El resumen de lo que eligió Carmen: inquilina, seguro, modalidad de cobro y lo que
+                paga ella. La solicitud es simulada; en el producto un asesor de Interbank la
+                contactaría para firmar.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Para cerrar la historia, cambia a <b>Ver como inquilino</b> y abre
+                <b>Mis postulaciones</b>. <b>Volver al inicio</b> regresa a la pantalla 1.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===================== PARTE 4 ===================== -->
+      <section id="parte-4" aria-labelledby="parte-4-titulo">
+        <span class="eye">Inquilino · cierre</span>
+        <h2 id="parte-4-titulo">Parte 4 · El inquilino ve el resultado</h2>
+
+        <article class="paso" id="paso-19" data-ruta="mis-postulaciones">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 19, desplazable">
+              <img
+                src="capturas/19-inquilino-postulacion-aceptada.png"
+                width="780"
+                alt="Mis postulaciones con la postulación a Jr. Dante 540 en estado Aceptada y el link Qué significa para ti."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/19-inquilino-postulacion-aceptada.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>19. Postulación aceptada</h3>
+            <p class="ruta">Ruta: <code>#/mis-postulaciones</code> · Paso 7 de 7</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>La postulación de Lucía ahora dice <b>Aceptada</b>.</p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>Toca <b>Qué significa para ti</b>.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-20" data-ruta="deudor">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 20, desplazable">
+              <img
+                src="capturas/20-inquilino-deudor.png"
+                width="780"
+                alt="Pantalla Figurarás como deudor de un préstamo de consumo: Interbank le paga a Carmen S/1,746 cada mes, Lucía devuelve S/1,800 al mes sin intereses, comisión S/54 que paga Carmen, seguro S/36 que paga Lucía, y aviso Antes de firmar."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/20-inquilino-deudor.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip inq">Inquilino</span>
+            <h3>20. Qué significa para ti</h3>
+            <p class="ruta">Ruta: <code>#/deudor/:id</code> · fuera de la secuencia</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Con Cobro Garantizado o Renta Adelantada, Interbank le paga al propietario y el
+                inquilino queda como deudor de un préstamo de consumo a tasa cero: devuelve la renta
+                mes a mes, como siempre, y la comisión la paga el propietario (decisión 018). Si el
+                propietario eligió cobro estándar, la pantalla dice que no hay préstamo. El texto
+                legal es un <span class="sup">SUPUESTO</span>.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Lee el aviso y toca <b>Volver a mis postulaciones</b>. Fin de la historia principal.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===================== PARTE 5 ===================== -->
+      <section id="parte-5" aria-labelledby="parte-5-titulo">
+        <span class="eye">Para la demo y para explorar</span>
+        <h2 id="parte-5-titulo">Parte 5 · Variantes y herramientas de demo</h2>
+
+        <article class="paso" id="paso-21" data-ruta="demo">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 21, desplazable">
+              <img
+                src="capturas/21-demo-panel.png"
+                width="780"
+                alt="Panel de demo: título Un inquilino, dos journeys, indicador de postulantes nuevos para el banco, botón Precargar postulación de Lucía y botones Ver la bandeja de Carmen, Ver el marketplace y Reiniciar demo."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/21-demo-panel.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip demo">Panel de demo</span>
+            <h3>21. Panel de demo</h3>
+            <p class="ruta">Ruta: <code>#/demo</code> · desde el pie: <b>Panel de demo</b></p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Una vista para el jurado que no es parte del producto. Muestra qué porcentaje de
+                postulantes no son clientes de Interbank (personas nuevas para el banco) y un atajo
+                para conectar los dos journeys.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <ul>
+                <li>
+                  <b>Precargar postulación de Lucía</b> crea su postulación como si la hubiera hecho
+                  en el marketplace (se salta la parte 2). Luego toca
+                  <b>Ver la bandeja de Carmen</b> y sigue desde el <a href="#paso-12">paso 12</a>.
+                </li>
+                <li><b>Ver el marketplace</b> abre el journey del inquilino.</li>
+                <li><b>Reiniciar demo</b> borra todo el avance.</li>
+              </ul>
+            </div>
+            <a class="abrir" href="../index.html#/demo">Abrir esta pantalla en el prototipo</a>
+          </div>
+        </article>
+
+        <article class="paso" id="paso-22" data-ruta="resultado">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 22, desplazable">
+              <img
+                src="capturas/22-variante-score-medio.png"
+                width="780"
+                alt="RentScore de Jorge Salazar: 56 de 100, score medio, capacidad de pago S/1,600 frente a una renta de S/1,800 y aviso de que la renta supera su capacidad de pago en S/200 al mes."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/22-variante-score-medio.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip medio">Score medio</span>
+            <h3>22. Variante: RentScore medio (Jorge)</h3>
+            <p class="ruta">Ruta: <code>#/resultado/jorge</code></p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Con score medio (56) sí se ofrecen Cobro Garantizado (5%) y Renta Adelantada (25%),
+                con comisiones más altas que con score alto. Un aviso indica que la renta supera su
+                capacidad de pago en S/200 al mes.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Compara con la pantalla 15. Si aceptas a Jorge, el resto de la historia usa sus
+                cifras.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/resultado/jorge"
+              >Abrir esta pantalla en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-23" data-ruta="resultado">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 23, desplazable">
+              <img
+                src="capturas/23-variante-score-bajo.png"
+                width="780"
+                alt="RentScore de Kevin Rojas: 26 de 100, score bajo, aviso de riesgo alto de impago y botones Ver otros postulantes y Aceptar de todos modos."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/23-variante-score-bajo.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip bajo">Score bajo</span>
+            <h3>23. Variante: RentScore bajo (Kevin)</h3>
+            <p class="ruta">Ruta: <code>#/resultado/kevin</code></p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Con score bajo (26) aparece un aviso de riesgo alto de impago: Cobro Garantizado y
+                Renta Adelantada no están disponibles. La acción principal pasa a ser
+                <b>Ver otros postulantes</b>.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Toca <b>Aceptar de todos modos</b> y luego <b>Elegir cómo cobrar</b> para ver la
+                pantalla siguiente.
+              </p>
+            </div>
+            <a class="abrir" href="../index.html#/resultado/kevin"
+              >Abrir esta pantalla en el prototipo</a
+            >
+          </div>
+        </article>
+
+        <article class="paso" id="paso-24" data-ruta="cobro">
+          <figure>
+            <div class="marco" tabindex="0" role="region" aria-label="Captura 24, desplazable">
+              <img
+                src="capturas/24-variante-cobro-score-bajo.png"
+                width="780"
+                alt="Cómo cobrar con el score bajo de Kevin: solo Cobro estándar disponible; Cobro Garantizado y Renta Adelantada marcados como No disponible con el link Ver otros postulantes."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <a href="capturas/24-variante-cobro-score-bajo.png">Ver captura completa</a>
+            </figcaption>
+          </figure>
+          <div>
+            <span class="chip bajo">Score bajo</span>
+            <h3>24. Variante: cómo cobrar con score bajo</h3>
+            <p class="ruta">Ruta: <code>#/cobro</code> después de aceptar a Kevin</p>
+            <div class="bloque">
+              <h4>Qué ves</h4>
+              <p>
+                Solo queda el cobro estándar. Las otras dos opciones dicen <b>No disponible</b>:
+                solo se ofrecen con score medio o alto.
+              </p>
+            </div>
+            <div class="bloque">
+              <h4>Qué haces</h4>
+              <p>
+                Elige <b>Cobro estándar</b> y toca <b>Continuar con cobro estándar</b>, o vuelve con
+                <b>Ver otros postulantes</b>. Usa <b>Reiniciar demo</b> antes de volver a la
+                historia principal.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="mapa" aria-labelledby="mapa-titulo">
+        <span class="eye">Referencia</span>
+        <h2 id="mapa-titulo">Mapa rápido de pantallas</h2>
+        <div class="tabla">
+          <table>
+            <caption class="eye">
+              Journey de la propietaria (Carmen)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Paso</th>
+                <th scope="col">Pantalla</th>
+                <th scope="col">Ruta</th>
+                <th scope="col">Acción principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="#paso-01">Inicio</a></td>
+                <td><code>#/inicio</code></td>
+                <td>Publicar inmueble</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#paso-02">Publicar</a></td>
+                <td><code>#/publicar</code></td>
+                <td>Publicar inmueble</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="#paso-03">Mi inmueble</a></td>
+                <td><code>#/inmueble</code></td>
+                <td>Ver postulantes</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="#paso-12">Postulantes</a></td>
+                <td><code>#/postulantes</code></td>
+                <td>Abrir un postulante</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="#paso-13">Postulante</a></td>
+                <td><code>#/postulante/:id</code></td>
+                <td>Ver RentScore</td>
+              </tr>
+              <tr>
+                <td>–</td>
+                <td><a href="#paso-14">Autorización</a></td>
+                <td><code>#/consentimiento/:id</code></td>
+                <td>Volver</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="#paso-15">RentScore</a></td>
+                <td><code>#/resultado/:id</code></td>
+                <td>Aceptar</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="#paso-16">Seguro</a></td>
+                <td><code>#/poliza/:id</code></td>
+                <td>Elegir cómo cobrar</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><a href="#paso-17">Cómo cobrar</a></td>
+                <td><code>#/cobro</code></td>
+                <td>Elegir modalidad y confirmar</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><a href="#paso-18">Listo</a></td>
+                <td><code>#/confirmacion</code></td>
+                <td>Volver al inicio</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabla">
+          <table>
+            <caption class="eye">
+              Journey del inquilino (Lucía)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Paso</th>
+                <th scope="col">Pantalla</th>
+                <th scope="col">Ruta</th>
+                <th scope="col">Acción principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="#paso-04">Marketplace</a></td>
+                <td><code>#/marketplace</code></td>
+                <td>Abrir una propiedad</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#paso-05">Propiedad</a></td>
+                <td><code>#/propiedad/:id</code></td>
+                <td>Postular</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="#paso-06">Registro</a></td>
+                <td><code>#/registro</code></td>
+                <td>Enviar código y verificar</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="#paso-08">Autorización</a></td>
+                <td><code>#/autorizar</code></td>
+                <td>Calcular mi RentScore</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="#paso-09">Mi RentScore</a></td>
+                <td><code>#/mi-score</code></td>
+                <td>Continuar con mi postulación</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="#paso-10">Postular</a></td>
+                <td><code>#/postular/:id</code></td>
+                <td>Enviar postulación</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="#paso-11">Mis postulaciones</a></td>
+                <td><code>#/mis-postulaciones</code></td>
+                <td>Ver estado, retirar o dejar de compartir</td>
+              </tr>
+              <tr>
+                <td>–</td>
+                <td><a href="#paso-20">Qué significa para ti</a></td>
+                <td><code>#/deudor/:id</code></td>
+                <td>Volver a mis postulaciones</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="nota">
+          <b>Si una pantalla te devuelve a otra,</b> es a propósito: el prototipo no deja saltarse
+          pasos. Por ejemplo, <code>#/mi-score</code> sin registro te lleva a
+          <code>#/registro</code>, y un postulante que no existe te lleva a <code>#/inicio</code>.
+        </div>
+      </section>
+
+      <section id="mantener" aria-labelledby="mantener-titulo">
+        <span class="eye">Para el equipo</span>
+        <h2 id="mantener-titulo">Cómo se mantiene esta guía</h2>
+        <p>
+          La guía es parte del entregable (decisión 020). Todo cambio de look and feel o de
+          navegación del prototipo la actualiza en el mismo cambio:
+        </p>
+        <ol>
+          <li>
+            Regenera las capturas: <code>cd prototype/app</code> y
+            <code>npm run walkthrough:capturas</code>. El script recorre los dos journeys con un
+            navegador Chromium y reemplaza <code>public/walkthrough/capturas/</code>.
+          </li>
+          <li>
+            Ajusta los textos de <code>public/walkthrough/index.html</code> si cambió lo que se ve o
+            lo que hace el usuario, y la fecha de “Última actualización”.
+          </li>
+          <li>
+            Corre <code>npm run check</code>. Incluye <code>walkthrough:verificar</code>, que falla
+            si una ruta de la app no está documentada aquí, si falta una captura o si sobra una.
+          </li>
+          <li>
+            Si se reparte la versión sin internet, regenera <code>local_deploy/</code> con
+            <code>npm run build:local</code>.
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="contenedor">
+        LLAVE · Prototipo del Equipo 22 (The Bet: Interbank, IFS, Interseguro). Datos ficticios, sin
+        conexión con sistemas reales. <a href="../index.html#/inicio">Volver al prototipo</a>
+      </div>
+    </footer>
+  </body>
+</html>
