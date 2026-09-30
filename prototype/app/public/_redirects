@@ -1,0 +1,3 @@
+# Redirecciones para Cloudflare Pages. Equivalen a las de vercel.json.
+/src / 302
+/src/* / 302
