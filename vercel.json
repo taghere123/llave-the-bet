@@ -5,6 +5,7 @@
   "buildCommand": "npm run build --prefix prototype/app",
   "outputDirectory": "prototype/app/dist",
   "redirects": [
+    { "source": "/walkthrough", "destination": "/walkthrough/index.html", "permanent": false },
     { "source": "/src", "destination": "/", "permanent": false },
     { "source": "/src/(.*)", "destination": "/", "permanent": false }
   ],

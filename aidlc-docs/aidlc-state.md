@@ -65,8 +65,8 @@ Checkpoints por unidad auto-aprobados por delegación del usuario (audit 00:45).
 
 ## Current Status
 - **Código**: `prototype/app/` (Vite + React + TypeScript). Legado intacto en `prototype/src` y `prototype/data`.
-- **Walkthrough (decisión 020, 2026-09-29)**: `prototype/app/public/walkthrough/` con 24 capturas generadas por `npm run walkthrough:capturas`; `npm run check` incluye `walkthrough:verificar`. Regla transversal: todo cambio de look and feel o navegación en cualquier unidad actualiza la guía (RNF-12, NFR-U1-11, reglas de Code Generation y Build and Test, steering `.kiro/steering/walkthrough.md`).
-- **Pendientes humanos**: revisión manual de paridad visual; verificar cabeceras tras el primer deploy; revisar los textos del walkthrough; commit/PR (no realizado por el agente).
+- **Walkthrough (decisión 020, 2026-09-29)**: `prototype/app/public/walkthrough/` con 24 capturas generadas por `npm run walkthrough:capturas`; `npm run check` incluye `walkthrough:verificar`. Desde el 2026-09-30 la guía es parte del artefacto de Vercel: `build` y `build:local` la validan antes y verifican la copia en la salida después (`--salida`); `vercel.json` redirige `/walkthrough`. Regla transversal: todo cambio de look and feel o navegación en cualquier unidad actualiza la guía (RNF-12, NFR-U1-11, reglas de Code Generation y Build and Test, steering `.kiro/steering/walkthrough.md`).
+- **Pendientes humanos**: revisión manual de paridad visual; verificar cabeceras y el redirect `/walkthrough` tras el primer deploy; revisar los textos del walkthrough; commit/PR (no realizado por el agente).
 
 ### 🟡 OPERATIONS PHASE
 - [ ] Operations — PLACEHOLDER

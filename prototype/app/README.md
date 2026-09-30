@@ -11,7 +11,7 @@ cd prototype/app
 npm ci            # instala las versiones exactas del lockfile
 npm run dev       # servidor local con recarga
 npm run check     # typecheck + lint + formato + pruebas
-npm run build     # genera dist/ (sitio estático)
+npm run build     # genera dist/ (sitio estático, con la guía en dist/walkthrough/)
 npm run preview   # sirve dist/ localmente
 npm run build:local  # genera ../../local_deploy/app/, que se abre con doble clic (ver local_deploy/README.md)
 npm run walkthrough:capturas   # regenera las capturas de la guía (necesita Chrome, Chromium, Edge o Brave)
@@ -23,11 +23,12 @@ npm run walkthrough:verificar  # comprueba que la guía cubre todas las rutas (t
 `public/walkthrough/` tiene la guía paso a paso de ambos journeys (`index.html`, `walkthrough.css` y `capturas/`). Vite la copia tal cual a `dist/walkthrough/` y a `local_deploy/app/walkthrough/`; en la app se abre desde el pie ("Guía de la demo").
 
 - `scripts/walkthrough-capturas.mjs` levanta Vite, recorre la historia completa con Playwright (Carmen publica, Lucía postula, Carmen la acepta con Cobro Garantizado, Lucía ve el aviso de deudor) más las variantes de score medio y bajo, y reemplaza `capturas/`. Reloj fijo, viewport de 390 px a 2x y estado limpio: el resultado es reproducible. Si no encuentra el navegador: `LLAVE_NAVEGADOR=/ruta/al/ejecutable npm run walkthrough:capturas`.
-- `scripts/walkthrough-verificar.mjs` falla si una ruta de `src/screens/registry.tsx` no tiene un paso con `data-ruta` en la guía, si falta o sobra una captura, o si un enlace interno no tiene destino.
+- `scripts/walkthrough-verificar.mjs` falla si una ruta de `src/screens/registry.tsx` no tiene un paso con `data-ruta` en la guía, si falta o sobra una captura, o si un enlace interno no tiene destino. Corre en `check` y antes de `build` y `build:local`.
+- La guía es parte del artefacto de Vercel. Después de compilar, `build` y `build:local` corren el mismo script con `--salida <carpeta>`, que falla si la salida no tiene una copia idéntica de `public/walkthrough/`. Si la guía no está al día, no hay deploy.
 - La guía no usa JavaScript ni estilos inline, por la CSP de `vercel.json`.
 - Si agregas una pantalla: suma su recorrido al script, un `<article class="paso" data-ruta="...">` a la guía y su fila en el mapa rápido.
 
-Vercel usa `vercel.json` en la raíz del repo: instala y construye esta carpeta y publica `prototype/app/dist`.
+Vercel usa `vercel.json` en la raíz del repo: instala y construye esta carpeta y publica `prototype/app/dist`, guía incluida (`/walkthrough/index.html`; `/walkthrough` redirige ahí para que las rutas relativas de la guía funcionen).
 
 ## Rutas
 

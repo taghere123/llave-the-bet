@@ -1,17 +1,62 @@
 // Verifica que el walkthrough (public/walkthrough/index.html) siga al día con la app (decisión 020).
-// Corre dentro de `npm run check`. Falla si:
+// Corre dentro de `npm run check` y antes de `npm run build` / `build:local`. Falla si:
 //   - una ruta de PANTALLAS (src/screens/registry.tsx) no tiene un paso con data-ruta en la guía
 //   - la guía documenta o enlaza una ruta que ya no existe
 //   - una captura referenciada no existe, o hay capturas en la carpeta que la guía no usa
 //   - un enlace interno (#ancla) apunta a un id inexistente
+//
+// Con `--salida <carpeta>` (después del build) verifica el artefacto: que la carpeta tenga la app
+// (index.html) y una copia idéntica de public/walkthrough/. Así el deploy de Vercel (dist/) y
+// local_deploy/app/ no salen sin la guía o con una versión distinta a la del repo.
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const APP = fileURLToPath(new URL('..', import.meta.url));
 const REGISTRO = join(APP, 'src', 'screens', 'registry.tsx');
-const GUIA = join(APP, 'public', 'walkthrough', 'index.html');
-const CAPTURAS = join(APP, 'public', 'walkthrough', 'capturas');
+const WALKTHROUGH = join(APP, 'public', 'walkthrough');
+const GUIA = join(WALKTHROUGH, 'index.html');
+const CAPTURAS = join(WALKTHROUGH, 'capturas');
+
+const argSalida = process.argv.indexOf('--salida');
+if (argSalida !== -1) {
+  const valor = process.argv[argSalida + 1];
+  if (!valor) {
+    console.error('Uso: node scripts/walkthrough-verificar.mjs --salida <carpeta del build>');
+    process.exit(1);
+  }
+  verificarArtefacto(resolve(APP, valor));
+  process.exit(0);
+}
+
+/** Archivos de una carpeta, recursivo y sin archivos ocultos (.DS_Store y similares). */
+function archivos(dir) {
+  return readdirSync(dir, { withFileTypes: true, recursive: true })
+    .filter((e) => e.isFile() && !e.name.startsWith('.'))
+    .map((e) => relative(dir, join(e.parentPath, e.name)))
+    .sort();
+}
+
+function verificarArtefacto(salida) {
+  const faltas = [];
+  if (!existsSync(join(salida, 'index.html'))) faltas.push('index.html (la app)');
+  const destino = join(salida, 'walkthrough');
+  const fuentes = archivos(WALKTHROUGH);
+  for (const f of fuentes) {
+    const copia = join(destino, f);
+    if (!existsSync(copia)) faltas.push(`walkthrough/${f}`);
+    else if (!readFileSync(copia).equals(readFileSync(join(WALKTHROUGH, f))))
+      faltas.push(`walkthrough/${f} (distinto al de public/)`);
+  }
+  if (faltas.length) {
+    console.error(`El artefacto ${salida} no incluye el walkthrough completo:`);
+    for (const f of faltas) console.error(`  - ${f}`);
+    process.exit(1);
+  }
+  console.log(
+    `Artefacto con walkthrough: ${fuentes.length} archivos en ${relative(APP, destino)}.`,
+  );
+}
 
 const errores = [];
 

@@ -43,6 +43,10 @@ Un entregable con cambios visuales y la guía sin actualizar no se considera ter
   Chromium instalado (Chrome, Chromium, Edge o Brave) o el que indique `LLAVE_NAVEGADOR`.
 - Las capturas (~4 MB) se versionan y se publican. Son deterministas: reloj fijo, viewport móvil y
   datos ficticios.
+- (2026-09-30) La guía es parte del artefacto de Vercel, no un anexo: `npm run build` y
+  `build:local` corren `walkthrough:verificar` antes de compilar y comprueban después que la
+  salida tenga una copia idéntica de `public/walkthrough/`. Si falla, no hay deploy. `vercel.json`
+  redirige `/walkthrough` a `/walkthrough/index.html` para que las rutas relativas no se rompan.
 - La regla queda en `CLAUDE.md`, los README, los requisitos (RNF-12), los NFR de cada unidad, las
   reglas AI-DLC de Code Generation y Build and Test y el steering de Kiro.
 - La verificación automática cubre rutas y archivos, no el contenido de las capturas ni la

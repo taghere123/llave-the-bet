@@ -20,7 +20,7 @@ Abrir `src/index.html` con doble clic en el navegador. No necesita servidor, bui
 - Responsive: una columna en móvil y 2 a 3 columnas desde 720px, dentro del contenedor de 896px del design system. Las ilustraciones son SVG inline con la paleta de `tokens.json`; no hay fotos ni archivos de imagen.
 - Todo número inventado lleva la etiqueta SUPUESTO en pantalla y está listado en `docs/supuestos.md`.
 - El progreso se guarda en `localStorage`. "Reiniciar demo" al pie vuelve al estado inicial.
-- Publicación en Vercel (desde el 29 sept): `vercel.json` en la raíz construye `prototype/app` y publica solo `prototype/app/dist`. Así `context/`, `decisions/` y los originales no se publican. Al importar el repo en Vercel, dejar Root Directory en la raíz. La página lleva `noindex` y cabeceras de seguridad (CSP, HSTS, nosniff, X-Frame-Options, Referrer-Policy).
+- Publicación en Vercel (desde el 29 sept): `vercel.json` en la raíz construye `prototype/app` y publica solo `prototype/app/dist`, que incluye la app y el walkthrough (`/walkthrough/`). El build falla si la guía no está al día o no quedó en el artefacto. Así `context/`, `decisions/` y los originales no se publican. Al importar el repo en Vercel, dejar Root Directory en la raíz. La página lleva `noindex` y cabeceras de seguridad (CSP, HSTS, nosniff, X-Frame-Options, Referrer-Policy).
 - No es un entregable validado: sirve para alinear al equipo antes del taller. Sin validación con usuarios.
 
 ## Journeys a cubrir

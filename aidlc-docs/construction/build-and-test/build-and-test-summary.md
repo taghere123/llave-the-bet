@@ -29,9 +29,10 @@ Ejecutado el 2026-09-29 en macOS con Node 26.8.2.
 - `prototype/app/public/walkthrough/`: guía HTML de ambos journeys con 24 capturas. Se publica en `dist/walkthrough/` y `local_deploy/app/walkthrough/`, enlazada desde el pie de la app.
 - `npm run walkthrough:capturas` genera las capturas con Playwright sobre un Chromium local (recorrido real por clics, reloj fijo). Es el primer recorrido E2E en navegador real: pasa por las 19 rutas sin errores de página.
 - `npm run walkthrough:verificar` corre dentro de `npm run check`: 19 rutas documentadas, 24 capturas referenciadas.
+- **Parte del artefacto de Vercel (2026-09-30)**: `npm run build` y `build:local` corren `walkthrough:verificar` antes de compilar y comprueban después que la salida tenga una copia idéntica de `public/walkthrough/` (26 archivos). Si falla, no hay deploy. `vercel.json` redirige `/walkthrough` a `/walkthrough/index.html`. Probado en negativo (captura borrada y CSS alterado en `dist/`: falla con exit 1) y servido con `vite preview` (200 en guía, CSS y capturas). El redirect no se probó localmente (no hay Vercel CLI); queda para después del deploy.
 - **Criterio de cierre para todo cambio futuro de look and feel o navegación**: capturas regeneradas, textos de la guía revisados y `npm run check` en verde.
 
 ## Pendientes conocidos
 1. Revisión manual lado a lado legado vs. app (paridad visual, Q3=A).
-2. Verificar las cabeceras con `curl -I` después del primer deploy en Vercel.
+2. Verificar las cabeceras con `curl -I` después del primer deploy en Vercel, y que `/walkthrough` responda 307 hacia `/walkthrough/index.html` con estilos y capturas cargando.
 3. Todo lo que es SUPUESTO sigue abierto con Legal, Riesgos e Interseguro (decisiones 010, 012, 016 y 018).

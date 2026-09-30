@@ -232,3 +232,27 @@ Asimismo, cada vez que se realicen cambios en el look and feel, actualizar este 
 **Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario, completada)
 
 ---
+## Build and Test — Walkthrough en el artefacto de Vercel (solicitud)
+**Timestamp**: 2026-09-30T10:30:00Z
+**User Input**: "cambio de planes. 
+
+ 
+
+/Users/diego/Documents/Interseguro/la_llave/llave-the-bet/prototype/app/public/walkthrough/index.html debe ser parte del artefacto para vercel. Hagamos los cambios necesarios para asegurar coherencia de código y buenas prácticas."
+**AI Response**: "Solicitud registrada como extensión de CONSTRUCTION - Build and Test (profundidad mínima, delegación vigente de la entrada 00:45). Diagnóstico: Vite ya copia public/walkthrough/ a dist/, pero (1) el build que corre Vercel no valida la guía, así que podía publicarse desactualizada o incompleta sin que nada fallara; (2) con trailingSlash sin definir, Vercel sirve /walkthrough sin barra final y las rutas relativas (walkthrough.css, capturas/) se rompen; (3) .gitignore arrastra una regla public/ del deploy legado con una excepción solo para la guía. Plan: build y build:local validan la guía antes y el artefacto después, redirect /walkthrough en vercel.json, limpieza de .gitignore y documentación."
+**Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario)
+
+---
+## Build and Test — Walkthrough en el artefacto de Vercel (completado)
+**Timestamp**: 2026-09-30T10:45:00Z
+**AI Response**: "build y build:local corren walkthrough:verificar antes de compilar y walkthrough-verificar.mjs --salida <carpeta> después (copia byte a byte de public/walkthrough/, 26 archivos). vercel.json redirige /walkthrough → /walkthrough/index.html (307). .gitignore sin la regla public/ del deploy legado. Documentación: build-instructions, build-and-test-summary, decisión 020, prototype/README, app/README, aidlc-state. Verificado: check 64/64, build y build:local OK, gate probado en negativo (exit 1), vite preview 200 en guía, CSS y capturas. No verificado: el redirect en Vercel (sin Vercel CLI local)."
+**Context**: CONSTRUCTION - Build and Test (extensión a pedido del usuario, completada)
+
+---
+## Build and Test — Consulta sobre el walkthrough en Vercel
+**Timestamp**: 2026-09-30T10:55:00Z
+**User Input**: "desde vercel se puede navegar el walkthrough?"
+**AI Response**: "Sí. origin/main ya incluye public/walkthrough/ (26 archivos) y el link del pie, así que el deploy actual debería servir /walkthrough/index.html. No se verificó en vivo: el repo no registra la URL de Vercel. Los cambios del 2026-09-30 (gate en build y redirect /walkthrough) siguen sin commit."
+**Context**: CONSTRUCTION - Build and Test (consulta)
+
+---

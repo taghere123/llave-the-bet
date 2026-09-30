@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "build:local": "tsc --noEmit && vite build --mode local-deploy",
+    "build": "tsc --noEmit && npm run walkthrough:verificar && vite build && node scripts/walkthrough-verificar.mjs --salida dist",
+    "build:local": "tsc --noEmit && npm run walkthrough:verificar && vite build --mode local-deploy && node scripts/walkthrough-verificar.mjs --salida ../../local_deploy/app",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
