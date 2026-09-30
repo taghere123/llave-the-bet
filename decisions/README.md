@@ -18,5 +18,11 @@ Una decisión por archivo. Numeración: 001-009 tomadas, 010 en adelante abierta
 | 016 | Renta Adelantada entra al MVP (1 año, 15% alto, 25% medio) como préstamo de consumo a tasa cero | Tomada (25 sept 2026). Falta Riesgos, Legal y SBS | Equipo |
 | 017 | Marketplace propio de LLAVE con flujo de inquilino; entra al piloto. Reemplaza 001 | Tomada (29 sept 2026) | Equipo |
 | 018 | En niveles 2 y 3 el deudor es el inquilino y el beneficiario el propietario | Tomada (29 sept 2026). Falta Legal, Riesgos y SBS | Equipo |
+| 019 | Alcance de deuda técnica y módulos simulados en el ciclo AI-DLC | Tomada (29 sept 2026) | Diego Moscoso |
+| 021 | Elegibilidad de niveles 2 y 3 también por capacidad de pago (propuesta; toca 012 y 016) | **Abierta** | Por asignar (Riesgos) |
+| 022 | Renta Adelantada solo con score alto en el MVP (propuesta; reabre 016) | **Abierta** | Por asignar (Riesgos y Legal) |
+| 023 | Marketplace liviano, Pasaporte RentScore e invitación al inquilino actual (propuesta; revisa 017) | **Abierta** | Por asignar |
+| 024 | Hipótesis del MVP en dos partes y North Star (propuesta; revisa 004) | **Abierta** | Por asignar |
+| 025 | Estructura de Cobro Garantizado: préstamo a tasa cero o garantía con comisión (propuesta; revisa 016 y 018) | **Abierta** | Por asignar (Legal y Riesgos) |
 
 Formato de cada archivo: contexto, opciones, criterio, decisión, consecuencias, fecha y responsable.
