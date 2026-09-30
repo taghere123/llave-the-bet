@@ -19,6 +19,7 @@ Hay propuesta y un prototipo navegable con datos ficticios y dos journeys conect
 | `decisions/` | Decisiones tomadas y decisiones abiertas, una por archivo |
 | `prototype/` | Prototipo navegable con datos falsos (taller AI-DLC) |
 | `mvp/` | Especificación del piloto de 90 días |
+| `prototype/app/public/walkthrough/` | Guía navegable con capturas de ambos journeys, para quien no conoce el proyecto. Se abre desde el pie de la app ("Guía de la demo") |
 | `scripts/` | Utilidades, incluido el script para crear los issues iniciales |
 | `CLAUDE.md` | Contexto para herramientas de IA. Se lee automáticamente |
 | `CONTRATOS.md` | Qué garantiza cada carpeta y documento, y cómo se cambia |
@@ -43,3 +44,4 @@ William Salinas (negocio y narrativa), Carlos Segura (producto digital e IA), Di
 - Si un documento contradice a otro, no se elige uno en silencio: se abre o actualiza una decisión.
 - Cambios por rama y pull request, aunque sean cuatro personas. Deja traza de quién decidió qué.
 - No confiar en cifras o competidores que salgan de una herramienta de IA sin verificar la fuente. Hubo alucinaciones en este proyecto.
+- Todo cambio de look and feel o de navegación del prototipo actualiza el walkthrough en el mismo PR (decisión 020): `npm run walkthrough:capturas`, textos de la guía y `npm run check` en verde.

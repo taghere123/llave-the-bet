@@ -9,3 +9,5 @@ dist/
 
 # Salida del build de Vercel
 public/
+# Excepción: archivos estáticos de la app (walkthrough y sus capturas), sí se versionan
+!/prototype/app/public/

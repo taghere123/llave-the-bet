@@ -35,6 +35,8 @@ La oferta por la que paga el propietario aparece recién en el paso 8 de 9, y la
 
 El cambio de navegación de hoy cerró el círculo: Lucía postula desde el marketplace y aparece como «Nuevo» en la bandeja de Carmen. El consentimiento en dos capas, la revocación y las etiquetas SUPUESTO dan una base de confianza que el jurado va a valorar. La base técnica (providers simulados y 64 pruebas) permite cambiar lo simulado por integraciones reales sin rehacer pantallas.
 
+La guía navegable del prototipo (decisión 020) documenta sus 19 rutas con 24 capturas: el jurado puede recorrerlo sin ayuda.
+
 ![Journeys del prototipo con las fricciones F1-F8: la oferta que paga el propietario aparece recién en el paso 8 de 9](originals/06-recomendaciones-journeys-y-fricciones.png)
 
 Lucía llega a la bandeja de Carmen desde su paso 6; Carmen ve la oferta que paga recién en su paso 8 y nunca ve un mes cobrado.
@@ -79,11 +81,12 @@ Las pantallas que se fusionan no pierden contenido: el detalle del score y la p�
 
 Esfuerzo estimado para el prototipo actual: S, menos de 1 día; M, de 2 a 4 días. UX1 a UX6 deberían estar listas antes del primer ensayo del pitch.
 
-Tres reglas que no se negocian al cambiar la UI:
+Cuatro reglas que no se negocian al cambiar la UI:
 
 - Sin preselección en Cómo cobrar: el piloto mide la elección real del propietario.
 - El ancla de pérdida es un escenario ilustrativo, no una probabilidad; se rotula así en pantalla.
 - Montos siempre en soles con el formato del sistema (S/1,746) y contraste AA en todo texto.
+- Cada cambio actualiza el walkthrough en el mismo PR (decisión 020): capturas, textos de la guía y `npm run check` en verde.
 
 ### Guion de la demo en 3 minutos
 
@@ -243,7 +246,7 @@ Estas trece validaciones convierten supuestos en evidencia, ordenadas por cuánd
 - [ ] **Antes del ensayo.** Legal define la estructura de Cobro Garantizado (préstamo a tasa cero o garantía con comisión), la TCEA, el tope de tasas y el aviso de deudor. Sugerido: Diego Herrera.
 - [ ] **Antes del ensayo.** Interseguro confirma si hay un seguro de hogar vigente que se pueda reutilizar y si 2-5% de la renta es sostenible. Sugerido: William Salinas y Carlos Segura.
 - [ ] **Antes del ensayo.** Encuesta corta a inquilinos: disposición a pagar el seguro y a figurar como deudor a cambio de historial. Sugerido: Carlos Segura.
-- [ ] **Antes del ensayo.** Implementar UX1 a UX6 en el prototipo y probar el guion de 3 minutos. Sugerido: Carlos Segura y Diego Moscoso.
+- [ ] **Antes del ensayo.** Implementar UX1 a UX6 en el prototipo, con el walkthrough actualizado (decisión 020), y probar el guion de 3 minutos. Sugerido: Carlos Segura y Diego Moscoso.
 - [ ] **Antes de la final.** Backtest del RentScore sobre clientes que ya pagan alquiler por transferencia, con aprobación de Legal. Sugerido: Diego Herrera y Diego Moscoso.
 - [ ] **Antes de la final.** Contar, con aprobación de Legal, cuántos clientes reciben transferencias recurrentes de montos de alquiler. Sugerido: Diego Moscoso.
 - [ ] **Antes de la final.** Cerrar la decisión 011 con un caso base en soles: contratos, prima promedio, take rate, horizonte y costo del squad. Sugerido: William Salinas.

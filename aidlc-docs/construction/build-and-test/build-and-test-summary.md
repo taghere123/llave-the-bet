@@ -25,6 +25,12 @@ Ejecutado el 2026-09-29 en macOS con Node 26.8.2.
 - **Pruebas**: Pass.
 - **Listo para deploy**: sí, como demo estática. El siguiente push a la rama publica con el nuevo `vercel.json`, pero el deploy en sí no se probó (se verificó el build local).
 
+## Walkthrough (agregado el 2026-09-29, decisión 020)
+- `prototype/app/public/walkthrough/`: guía HTML de ambos journeys con 24 capturas. Se publica en `dist/walkthrough/` y `local_deploy/app/walkthrough/`, enlazada desde el pie de la app.
+- `npm run walkthrough:capturas` genera las capturas con Playwright sobre un Chromium local (recorrido real por clics, reloj fijo). Es el primer recorrido E2E en navegador real: pasa por las 19 rutas sin errores de página.
+- `npm run walkthrough:verificar` corre dentro de `npm run check`: 19 rutas documentadas, 24 capturas referenciadas.
+- **Criterio de cierre para todo cambio futuro de look and feel o navegación**: capturas regeneradas, textos de la guía revisados y `npm run check` en verde.
+
 ## Pendientes conocidos
 1. Revisión manual lado a lado legado vs. app (paridad visual, Q3=A).
 2. Verificar las cabeceras con `curl -I` después del primer deploy en Vercel.

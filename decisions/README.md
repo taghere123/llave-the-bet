@@ -19,6 +19,7 @@ Una decisión por archivo. Numeración: 001-009 tomadas, 010 en adelante abierta
 | 017 | Marketplace propio de LLAVE con flujo de inquilino; entra al piloto. Reemplaza 001 | Tomada (29 sept 2026) | Equipo |
 | 018 | En niveles 2 y 3 el deudor es el inquilino y el beneficiario el propietario | Tomada (29 sept 2026). Falta Legal, Riesgos y SBS | Equipo |
 | 019 | Alcance de deuda técnica y módulos simulados en el ciclo AI-DLC | Tomada (29 sept 2026) | Diego Moscoso |
+| 020 | El walkthrough del prototipo se actualiza con todo cambio de look and feel o navegación | Tomada (29 sept 2026) | Diego Moscoso |
 | 021 | Elegibilidad de niveles 2 y 3 también por capacidad de pago (propuesta; toca 012 y 016) | **Abierta** | Por asignar (Riesgos) |
 | 022 | Renta Adelantada solo con score alto en el MVP (propuesta; reabre 016) | **Abierta** | Por asignar (Riesgos y Legal) |
 | 023 | Marketplace liviano, Pasaporte RentScore e invitación al inquilino actual (propuesta; revisa 017) | **Abierta** | Por asignar |
